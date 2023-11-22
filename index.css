@@ -38,13 +38,6 @@ footer li {
     display: inline-block;
 }
 
-.dropdown {
-    display: none;
-}
-
-li:hover .dropdown {
-    display: block;
-}
 
 div {
     width: 1000px;
