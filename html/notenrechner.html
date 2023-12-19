@@ -1,298 +1,309 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/basic_style.css">
-    <title>Notenrechner - VITHub</title>
-    
-</head>
-<body>
-    <header>
-        <h1>VITHub</h1>
-        <nav>
-            <ul class="navigationsliste">
-                <li><a href="passwortgenerator.html">Passwortgenerator</a></li>
-                <li><a href="textgenerator.html">Textgenerator</a></li>
-                <li><a href="iprechner.html">IPv4-Adressrechner</a></li>
-                <li><a href="notenrechner.html">Notenrechner</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="main-box">
-        <form action="">
-            <div>
-                <h2>Grundstudium</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Modul</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="gs">
-                        <tr>
-                            <td>Basisqualifikationen: Grundlagen der Rechnertechnik, Mathematik und Logik</td>
-                            <td><input type="number" id="gs_1" name="gs"></td>
-                        </tr>
-                        <tr>
-                            <td>Wirtschaftswissenschaften, Softwareengineering und Projektmanagement</td>
-                            <td><input type="number" id="gs_2" name="gs"></td>
-                        </tr>
-                        <tr>
-                            <td>Allgemeines Verwaltungsrecht, Einführung in die Aufgaben der Bundesverwaltung, Recht des öffentlichen Dienstes und Sozialwissenschaftliche Kompetenzen</td>
-                            <td><input type="number" id="gs_3" name="gs"></td>
-                        </tr>
-                        <tr>
-                            <td>Verfassungsrecht, Europarecht und Zivilrecht</td>
-                            <td><input type="number" id="gs_4" name="gs"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Durchschnitt</td>
-                            <td id="gs_ergebnis">0 NP</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div>
-                <h2>Hauptstudium 1</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Modul</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="h1">
-                        <tr>
-                            <td>M3: Datenbanksysteme</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M4: Betriebssysteme</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M9: Modellierung von Systemen und Prozessen</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M11: Grundlagen des E-Governments</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M22: Internes Rechnungswesen und Verwaltungsbetriebswirtschaftslehre</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M34: Bundesverwaltung - Aufgabenwahrnehmung und Einsatz von Informationstechnologie</td>
-                            <td><input type="number"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Durchschnitt</td>
-                            <td id="h1_ergebnis">0 NP</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div>
-                <h2>Hauptstudium 2</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Modul</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="h2">
-                        <tr>
-                            <td>M5: IT-Architekturen und Rechnernetzwerke</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M7: Projektmanagement und Softwareengineering</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M8: Objektorientierte Programmierung</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M12: ERP- und BI-Systeme</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M23: Qualitätsmanagement</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M35: IT-Recht - inkl. Grundzüge der zielgruppenspezifischen Fachkommunikation</td>
-                            <td><input type="number"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Durchschnitt</td>
-                            <td id="h2_ergebnis">0 NP</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div>
-                <h2>Hauptstudium 3</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Modul</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="h3">
-                        <tr>
-                            <td>M6: IT-Sicherheit</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M10: Web-Technologie und Portallösungen</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M13: Informations- und Wissensmanagement</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M14: Servicemanagement und Rechenzentrumsbetrieb</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>M36: Managementkonzepte in der Bundesverwaltung</td>
-                            <td><input type="number"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Durchschnitt</td>
-                            <td id="h3_ergebnis">0 NP</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div>
-                <h2>Diplomarbeit</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Gewichtung</th>
-                            <th>Bestandteil</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="da">
-                        <tr>
-                            <td>75%</td>
-                            <td>Schriftliche Ausarbeitung</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>10%</td>
-                            <td>Präsentation</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>15%</td>
-                            <td>Disputation</td>
-                            <td><input type="number"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Durchschnitt</td>
-                            <td id="da_ergebnis">0 NP</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div>
-                <h2>Pratika</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Praktikum</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="praktika">
-                        <tr>
-                            <td>Praktikum 1</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>Praktikum 2</td>
-                            <td><input type="number"></td>
-                        </tr>
-                        <tr>
-                            <td>Praktikum 3</td>
-                            <td><input type="number"></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td id="praktika_ergebnis">Durchschnitt</td>
-                            <td>0 NP</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <div>
-                <h2>Gesamtnote</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Gewichtung</th>
-                            <th>Bestandteil</th>
-                            <th>Notenpunkte</th>
-                        </tr>
-                    </thead>
-                    <tbody id="gesamt">
-                        <tr>
-                            <td>5%</td>
-                            <td>Grundstudium</td>
-                            <td>0 NP</td>
-                        </tr>
-                        <tr>
-                            <td>5%</td>
-                            <td>Praktika</td>
-                            <td>0 NP</td>
-                        </tr>
-                        <tr>
-                            <td>70%</td>
-                            <td>Hauptstudium</td>
-                            <td>0 NP</td>
-                        </tr>
-                        <tr>
-                            <td>20%</td>
-                            <td>Diplomarbeit</td>
-                            <td>0 NP</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </div>
-    <footer>
-        <div>
-            <ul class="footerliste">
-                <li><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
-                <li><a href="überuns.html">Über uns</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
-                <li><a href="layout.html">Layout-Einstellungen</a></li>
-            </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/basic_style.css">
+        <title>Notenrechner - VITHub</title>
+
+    </head>
+    <body>
+        <header>
+            <h1>VITHub</h1>
+            <nav>
+                <ul class="navigationsliste">
+                    <li><a href="passwortgenerator.html">Passwortgenerator</a></li>
+                    <li><a href="textgenerator.html">Textgenerator</a></li>
+                    <li><a href="iprechner.html">IPv4-Adressrechner</a></li>
+                    <li><a href="notenrechner.html">Notenrechner</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-box">
+            <form action>
+                <div>
+                    <h2>Grundstudium</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modul</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gs">
+                            <tr>
+                                <td>Basisqualifikationen: Grundlagen der
+                                    Rechnertechnik, Mathematik und Logik</td>
+                                <td><input type="number" id="gs_1" name="gs"></td>
+                            </tr>
+                            <tr>
+                                <td>Wirtschaftswissenschaften,
+                                    Softwareengineering und Projektmanagement</td>
+                                <td><input type="number" id="gs_2" name="gs"></td>
+                            </tr>
+                            <tr>
+                                <td>Allgemeines Verwaltungsrecht, Einführung in
+                                    die Aufgaben der Bundesverwaltung, Recht des
+                                    öffentlichen Dienstes und
+                                    Sozialwissenschaftliche Kompetenzen</td>
+                                <td><input type="number" id="gs_3" name="gs"></td>
+                            </tr>
+                            <tr>
+                                <td>Verfassungsrecht, Europarecht und Zivilrecht</td>
+                                <td><input type="number" id="gs_4" name="gs"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Durchschnitt</td>
+                                <td id="gs_ergebnis">0 NP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h2>Hauptstudium 1</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modul</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="h1">
+                            <tr>
+                                <td>M3: Datenbanksysteme</td>
+                                <td><input type="number" name="h1"></td>
+                            </tr>
+                            <tr>
+                                <td>M4: Betriebssysteme</td>
+                                <td><input type="number"></td>
+                            </tr>
+                            <tr>
+                                <td>M9: Modellierung von Systemen und Prozessen</td>
+                                <td><input type="number" name="h1"></td>
+                            </tr>
+                            <tr>
+                                <td>M11: Grundlagen des E-Governments</td>
+                                <td><input type="number" name="h1"></td>
+                            </tr>
+                            <tr>
+                                <td>M22: Internes Rechnungswesen und
+                                    Verwaltungsbetriebswirtschaftslehre</td>
+                                <td><input type="number" name="h1"></td>
+                            </tr>
+                            <tr>
+                                <td>M34: Bundesverwaltung - Aufgabenwahrnehmung
+                                    und Einsatz von Informationstechnologie</td>
+                                <td><input type="number" name="h1"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Durchschnitt</td>
+                                <td id="h1_ergebnis">0 NP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h2>Hauptstudium 2</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modul</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="h2">
+                            <tr>
+                                <td>M5: IT-Architekturen und Rechnernetzwerke</td>
+                                <td><input type="number" name="h2"></td>
+                            </tr>
+                            <tr>
+                                <td>M7: Projektmanagement und
+                                    Softwareengineering</td>
+                                <td><input type="number" name="h2"></td>
+                            </tr>
+                            <tr>
+                                <td>M8: Objektorientierte Programmierung</td>
+                                <td><input type="number" name="h2"></td>
+                            </tr>
+                            <tr>
+                                <td>M12: ERP- und BI-Systeme</td>
+                                <td><input type="number" name="h2"></td>
+                            </tr>
+                            <tr>
+                                <td>M23: Qualitätsmanagement</td>
+                                <td><input type="number" name="h2"></td>
+                            </tr>
+                            <tr>
+                                <td>M35: IT-Recht - inkl. Grundzüge der
+                                    zielgruppenspezifischen Fachkommunikation</td>
+                                <td><input type="number" name="h2"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Durchschnitt</td>
+                                <td id="h2_ergebnis">0 NP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h2>Hauptstudium 3</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Modul</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="h3">
+                            <tr>
+                                <td>M6: IT-Sicherheit</td>
+                                <td><input type="number" name="h3"></td>
+                            </tr>
+                            <tr>
+                                <td>M10: Web-Technologie und Portallösungen</td>
+                                <td><input type="number" name="h3"></td>
+                            </tr>
+                            <tr>
+                                <td>M13: Informations- und Wissensmanagement</td>
+                                <td><input type="number" name="h3"></td>
+                            </tr>
+                            <tr>
+                                <td>M14: Servicemanagement und
+                                    Rechenzentrumsbetrieb</td>
+                                <td><input type="number" name="h3"></td>
+                            </tr>
+                            <tr>
+                                <td>M36: Managementkonzepte in der
+                                    Bundesverwaltung</td>
+                                <td><input type="number" name="h3"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Durchschnitt</td>
+                                <td id="h3_ergebnis">0 NP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h2>Diplomarbeit</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Gewichtung</th>
+                                <th>Bestandteil</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="da">
+                            <tr>
+                                <td>75%</td>
+                                <td>Schriftliche Ausarbeitung</td>
+                                <td><input type="number" name="da"></td>
+                            </tr>
+                            <tr>
+                                <td>10%</td>
+                                <td>Präsentation</td>
+                                <td><input type="number" name="da"></td>
+                            </tr>
+                            <tr>
+                                <td>15%</td>
+                                <td>Disputation</td>
+                                <td><input type="number" name="da"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Durchschnitt</td>
+                                <td id="da_ergebnis">0 NP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h2>Pratika</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Praktikum</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="praktika">
+                            <tr>
+                                <td>Praktikum 1</td>
+                                <td><input type="number" name="praktika"></td>
+                            </tr>
+                            <tr>
+                                <td>Praktikum 2</td>
+                                <td><input type="number" name="praktika"></td>
+                            </tr>
+                            <tr>
+                                <td>Praktikum 3</td>
+                                <td><input type="number" name="praktika"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Durchschnitt</td>
+                                <td id="praktika_ergebnis">0 NP</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div>
+                    <h2>Gesamtnote</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Gewichtung</th>
+                                <th>Bestandteil</th>
+                                <th>Notenpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gesamt">
+                            <tr>
+                                <td>5%</td>
+                                <td>Grundstudium</td>
+                                <td>0 NP</td>
+                            </tr>
+                            <tr>
+                                <td>5%</td>
+                                <td>Praktika</td>
+                                <td>0 NP</td>
+                            </tr>
+                            <tr>
+                                <td>70%</td>
+                                <td>Hauptstudium</td>
+                                <td>0 NP</td>
+                            </tr>
+                            <tr>
+                                <td>20%</td>
+                                <td>Diplomarbeit</td>
+                                <td>0 NP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
         </div>
-    </footer>
-    <script src="../js/notenrechner.js"></script>
-</body>
+        <footer>
+            <div>
+                <ul class="footerliste">
+                    <li><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
+                    <li><a href="überuns.html">Über uns</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="layout.html">Layout-Einstellungen</a></li>
+                </ul>
+            </div>
+        </footer>
+        <script src="../js/notenrechner.js"></script>
+    </body>
 </html>

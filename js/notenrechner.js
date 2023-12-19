@@ -61,9 +61,3 @@ document.getElementById("praktika").addEventListener(
     }
 )
 
-document.getElementById("praktika").addEventListener(
-    "input",
-    function () {
-        berechneErgebnis("praktika");
-    }
-)
