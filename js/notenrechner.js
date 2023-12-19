@@ -13,6 +13,10 @@ function berechneErgebnis(name,ausgabefeld) {
     gib_aus(ausgabefeld, durchschnitt)
 }
 
+function berechneErgebnisDA() {
+    
+}
+
 function gib_aus(ausgabefeld, durchschnitt) {
     let ergebnis = document.getElementById(ausgabefeld)
     ergebnis.innerHTML = durchschnitt + " NP"
