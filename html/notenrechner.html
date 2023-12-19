@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="basic_style.css">
+    <link rel="stylesheet" href="../css/basic_style.css">
     <title>Notenrechner - VITHub</title>
+    
 </head>
 <body>
     <header>
@@ -29,28 +30,28 @@
                             <th>Notenpunkte</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="gs">
                         <tr>
                             <td>Basisqualifikationen: Grundlagen der Rechnertechnik, Mathematik und Logik</td>
-                            <td><input type="number"></td>
+                            <td><input type="number" id="gs_1" name="gs"></td>
                         </tr>
                         <tr>
                             <td>Wirtschaftswissenschaften, Softwareengineering und Projektmanagement</td>
-                            <td><input type="number"></td>
+                            <td><input type="number" id="gs_2" name="gs"></td>
                         </tr>
                         <tr>
                             <td>Allgemeines Verwaltungsrecht, Einführung in die Aufgaben der Bundesverwaltung, Recht des öffentlichen Dienstes und Sozialwissenschaftliche Kompetenzen</td>
-                            <td><input type="number"></td>
+                            <td><input type="number" id="gs_3" name="gs"></td>
                         </tr>
                         <tr>
                             <td>Verfassungsrecht, Europarecht und Zivilrecht</td>
-                            <td><input type="number"></td>
+                            <td><input type="number" id="gs_4" name="gs"></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td>0 NP</td>
+                            <td id="gs_ergebnis">0 NP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -286,5 +287,6 @@
             </ul>
         </div>
     </footer>
+    <script src="../js/notenrechner.js"></script>
 </body>
 </html>
