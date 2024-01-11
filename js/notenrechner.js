@@ -13,8 +13,12 @@ function berechneErgebnis(name,ausgabefeld) {
     gib_aus(ausgabefeld, durchschnitt)
 }
 
-function berechneErgebnisDA() {
-    
+function berechneErgebnisDA(ausgabefeld) {
+    let durchschnitt = 0
+    durchschnitt += (document.getElementById("da_schriftlich").value*0.75)
+    durchschnitt += (document.getElementById("da_präsi").value*0.1)
+    durchschnitt += (document.getElementById("da_disputation").value*0.15)
+    gib_aus(ausgabefeld,durchschnitt)
 }
 
 function gib_aus(ausgabefeld, durchschnitt) {
@@ -54,7 +58,7 @@ document.getElementById("h3").addEventListener(
 document.getElementById("da").addEventListener(
     "input",
     function () {
-        berechneErgebnis("da", "da_ergebnis");
+        berechneErgebnisDA("da_ergebnis")
     }
 )
 
@@ -64,4 +68,6 @@ document.getElementById("praktika").addEventListener(
         berechneErgebnis("praktika", "praktika_ergebnis")
     }
 )
+
+document.getElementsByName("ergebnis").forEach(e => e.addEventListener("DOM"))
 
