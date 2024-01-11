@@ -1,4 +1,4 @@
-function berechneErgebnis(name,ausgabefeld) {
+function berechneZwischenergebnis(name, ausgabefeld) {
     let felder = document.getElementsByName(name)
     let summe = 0
 
@@ -13,12 +13,20 @@ function berechneErgebnis(name,ausgabefeld) {
     gib_aus(ausgabefeld, durchschnitt)
 }
 
-function berechneErgebnisDA(ausgabefeld) {
+function berechneZwischenergebnisDA(ausgabefeld) {
     let durchschnitt = 0
-    durchschnitt += (document.getElementById("da_schriftlich").value*0.75)
-    durchschnitt += (document.getElementById("da_präsi").value*0.1)
-    durchschnitt += (document.getElementById("da_disputation").value*0.15)
-    gib_aus(ausgabefeld,durchschnitt)
+    durchschnitt += (document.getElementById("da_schriftlich").value * 0.75)
+    durchschnitt += (document.getElementById("da_präsi").value * 0.1)
+    durchschnitt += (document.getElementById("da_disputation").value * 0.15)
+    gib_aus(ausgabefeld, durchschnitt)
+}
+
+function berechneDurchschnittsnote(ausgabefeld) {
+    let durchschnitt = 0
+    let gs_note = document.getElementById("gs_ergebnis").value
+    let hs_note = 0
+    hs_note += document.getElementsByName("hs_note").forEach.value
+    let praktika_note = document.getElementById("praktika_ergebnis")
 }
 
 function gib_aus(ausgabefeld, durchschnitt) {
@@ -27,47 +35,19 @@ function gib_aus(ausgabefeld, durchschnitt) {
 
 }
 
-document.getElementById("gs").addEventListener(
-    "input",
+
+
+document.getElementById("button_berechnen").addEventListener(
+    "click", 
     function () {
-        berechneErgebnis("gs", "gs_ergebnis");
+    berechneZwischenergebnis("gs", "gs_ergebnis")
+    berechneZwischenergebnis("h1", "h1_ergebnis")
+    berechneZwischenergebnis("h2", "h2_ergebnis")
+    berechneZwischenergebnis("h3", "h3_ergebnis")
+    berechneZwischenergebnisDA("da_ergebnis")
+    berechneZwischenergebnis("praktika", "praktika_ergebnis")
+    berechneDurchschnittsnote("ergebnis", "")
     }
 )
 
-document.getElementById("h1").addEventListener(
-    "input",
-    function () {
-        berechneErgebnis("h1", "h1_ergebnis");
-    }
-)
-
-document.getElementById("h2").addEventListener(
-    "input",
-    function () {
-        berechneErgebnis("h2", "h2_ergebnis");
-    }
-)
-
-document.getElementById("h3").addEventListener(
-    "input",
-    function () {
-        berechneErgebnis("h3", "h3_ergebnis");
-    }
-)
-
-document.getElementById("da").addEventListener(
-    "input",
-    function () {
-        berechneErgebnisDA("da_ergebnis")
-    }
-)
-
-document.getElementById("praktika").addEventListener(
-    "input",
-    function () {
-        berechneErgebnis("praktika", "praktika_ergebnis")
-    }
-)
-
-document.getElementsByName("ergebnis").forEach(e => e.addEventListener("DOM"))
 
