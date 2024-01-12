@@ -15,14 +15,23 @@ let zwischenergebnisPraktika = 0
 function berechneZwischenergebnis(name) {
     let felder = document.getElementsByName(name)
     let summe = 0
+    let anzahlLegaleFelder = 0
 
     felder.forEach(function (feld) {
-        summe += parseInt(feld.value) || 0
+        if (parseFloat(feld.value) <= 15 && parseFloat(feld.value) >= 0) {
+            summe += parseFloat(feld.value)
+            anzahlLegaleFelder++
+        }
+        
     })
 
     let durchschnitt = 0
-    if (felder.length > 0) {
-        durchschnitt = summe / felder.length
+    if (anzahlLegaleFelder > 0) {
+        durchschnitt = summe / anzahlLegaleFelder
+        //Math.round rundet Dezimalzahlen kaufmännisch zur nächsten Ganzzahl auf oder ab. Hier wird der errechnete Durchschnitt auf 2 Nachkommastellen gerundet.
+        //Um auf 2 Nachkommastellen zu runden, wird der durchschnitt mit 100 multipliziert und darauf Math.round angewandt. Danach wird die Zahl durch 100 geteilt, 
+        //damit sich das Komma wieder zur ursprünglichen Position verschiebt.
+        durchschnitt = Math.round(durchschnitt *100)/100
     }
 
     if (name == "gs") {
@@ -50,6 +59,7 @@ function berechneZwischenergebnisDA() {
     durchschnitt += (document.getElementById("da_schriftlich").value * 0.75)
     durchschnitt += (document.getElementById("da_präsi").value * 0.1)
     durchschnitt += (document.getElementById("da_disputation").value * 0.15)
+    durchschnitt = Math.round(durchschnitt *100)/100
     zwischenergebnisDA = durchschnitt
     gib_aus("da_ergebnis", durchschnitt)
 }
@@ -67,6 +77,9 @@ function berechneDurchschnittsnote() {
     durchschnitt += zwischenergebnisHS * 0.7
     durchschnitt += zwischenergebnisDA * 0.2
     durchschnitt += zwischenergebnisPraktika * 0.05
+    durchschnitt = Math.round(durchschnitt *100)/100
+    durchschnittDezimal = berechneDurchschnittsnoteDezimal(durchschnitt)
+
 
     gib_aus("gesamt_ergebnis", durchschnitt)
     gib_aus("gesamt_ergebnis_dezimal",durchschnittDezimal)
@@ -82,66 +95,66 @@ function berechneDurchschnittsnote() {
 function berechneDurchschnittsnoteDezimal(durchschnitt) {
     if (durchschnitt == 15) {
         return 1.0
-    }   else if (durchschnitt >= 14,7) {
-        return 1,1
-    }   else if (durchschnitt >= 14,4) {
-        return 1,2
-    }   else if (durchschnitt >= 14,1) {
-        return 1,3
-    }   else if (durchschnitt >= 13,8) {
-        return 1,4
-    }   else if (durchschnitt >= 13,5) {
-        return 1,5
-    }   else if (durchschnitt >= 13,2) {
-        return 1,6
-    }   else if (durchschnitt >= 12,9) {
-        return 1,7
-    }   else if (durchschnitt >= 12,6) {
-        return 1,8
-    }   else if (durchschnitt >= 12,3) {
-        return 1,9
-    }   else if (durchschnitt >= 12,0) {
-        return 2,0
-    }   else if (durchschnitt >= 11,7) {
-        return 2,1
-    }   else if (durchschnitt >= 11,4) {
-        return 2,2
-    }   else if (durchschnitt >= 11,1) {
-        return 2,3
-    }   else if (durchschnitt >= 10,8) {
-        return 2,4
-    }   else if (durchschnitt >= 10,5) {
-        return 2,5
-    }   else if (durchschnitt >= 10,2) {
-        return 2,6
-    }   else if (durchschnitt >= 9,9) {
-        return 2,7
-    }   else if (durchschnitt >= 9,6) {
-        return 2,8
-    }   else if (durchschnitt >= 9,3) {
-        return 2,8
-    }   else if (durchschnitt >= 9,0) {
-        return 3,0
-    }   else if (durchschnitt >= 8,7) {
-        return 3,1
-    }   else if (durchschnitt >= 8,4) {
-        return 3,2
-    }   else if (durchschnitt >= 8,1) {
-        return 3,3
-    }   else if (durchschnitt >= 7,8) {
-        return 3,4
-    }   else if (durchschnitt >= 7,5) {
-        return 3,5
-    }   else if (durchschnitt >= 7,0) {
-        return 3,6
-    }   else if (durchschnitt >= 6,5) {
-        return 3,7
-    }   else if (durchschnitt >= 6,0) {
-        return 3,8
-    }   else if (durchschnitt >= 5,5) {
-        return 3,9
-    }   else if (durchschnitt >= 5,0) {
-        return 4,0
+    }   else if (durchschnitt >= 14.7) {
+        return 1.1
+    }   else if (durchschnitt >= 14.4) {
+        return 1.2
+    }   else if (durchschnitt >= 14.1) {
+        return 1.3
+    }   else if (durchschnitt >= 13.8) {
+        return 1.4
+    }   else if (durchschnitt >= 13.5) {
+        return 1.5
+    }   else if (durchschnitt >= 13.2) {
+        return 1.6
+    }   else if (durchschnitt >= 12.9) {
+        return 1.7
+    }   else if (durchschnitt >= 12.6) {
+        return 1.8
+    }   else if (durchschnitt >= 12.3) {
+        return 1.9
+    }   else if (durchschnitt >= 12.0) {
+        return 2.0
+    }   else if (durchschnitt >= 11.7) {
+        return 2.1
+    }   else if (durchschnitt >= 11.4) {
+        return 2.2
+    }   else if (durchschnitt >= 11.1) {
+        return 2.3
+    }   else if (durchschnitt >= 10.8) {
+        return 2.4
+    }   else if (durchschnitt >= 10.5) {
+        return 2.5
+    }   else if (durchschnitt >= 10.2) {
+        return 2.6
+    }   else if (durchschnitt >= 9.9) {
+        return 2.7
+    }   else if (durchschnitt >= 9.6) {
+        return 2.8
+    }   else if (durchschnitt >= 9.3) {
+        return 2.9
+    }   else if (durchschnitt >= 9.0) {
+        return 3.0
+    }   else if (durchschnitt >= 8.7) {
+        return 3.1
+    }   else if (durchschnitt >= 8.4) {
+        return 3.2
+    }   else if (durchschnitt >= 8.1) {
+        return 3.3
+    }   else if (durchschnitt >= 7.8) {
+        return 3.4
+    }   else if (durchschnitt >= 7.5) {
+        return 3.5
+    }   else if (durchschnitt >= 7.0) {
+        return 3.6
+    }   else if (durchschnitt >= 6.5) {
+        return 3.7
+    }   else if (durchschnitt >= 6.0) {
+        return 3.8
+    }   else if (durchschnitt >= 5.5) {
+        return 3.9
+    }   else if (durchschnitt >= 5.0) {
+        return 4.0
     }   else {
         return 0
     }
