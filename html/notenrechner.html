@@ -30,7 +30,7 @@
                             <th>Rangpunkte</th>
                         </tr>
                     </thead>
-                    <tbody id="gs">
+                    <tbody>
                         <tr>
                             <td>Basisqualifikationen: Grundlagen der
                                 Rechnertechnik, Mathematik und Logik</td>
@@ -57,7 +57,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="gs_ergebnis" name="ergebnis">0 RP</td>
+                            <td class="gs_ergebnis"></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -71,14 +71,14 @@
                             <th>Rangpunkte</th>
                         </tr>
                     </thead>
-                    <tbody id="h1">
+                    <tbody>
                         <tr>
                             <td>M3: Datenbanksysteme</td>
                             <td><input type="number" name="h1"></td>
                         </tr>
                         <tr>
                             <td>M4: Betriebssysteme</td>
-                            <td><input type="number"></td>
+                            <td><input type="number" name="h1"></td>
                         </tr>
                         <tr>
                             <td>M9: Modellierung von Systemen und Prozessen</td>
@@ -102,7 +102,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="h1_ergebnis" name="hs_ergebnis">0 RP</td>
+                            <td class="h1_ergebnis"></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -113,10 +113,10 @@
                     <thead>
                         <tr>
                             <th>Modul</th>
-                            <th>Notenpunkte</th>
+                            <th>Rangpunkte</th>
                         </tr>
                     </thead>
-                    <tbody id="h2">
+                    <tbody>
                         <tr>
                             <td>M5: IT-Architekturen und Rechnernetzwerke</td>
                             <td><input type="number" name="h2"></td>
@@ -147,7 +147,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="h2_ergebnis" name="hs_ergebnis">0 RP</td>
+                            <td class="h2_ergebnis"></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -158,10 +158,10 @@
                     <thead>
                         <tr>
                             <th>Modul</th>
-                            <th>Notenpunkte</th>
+                            <th>Rangpunkte</th>
                         </tr>
                     </thead>
-                    <tbody id="h3">
+                    <tbody>
                         <tr>
                             <td>M6: IT-Sicherheit</td>
                             <td><input type="number" name="h3"></td>
@@ -188,7 +188,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="h3_ergebnis" name="hs_ergebnis">0 RP</td>
+                            <td class="h3_ergebnis"></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -199,11 +199,11 @@
                     <thead>
                         <tr>
                             <th>Gewichtung</th>
-                            <th>Bestandteil</th>
-                            <th>Notenpunkte</th>
+                            <th>Leistung</th>
+                            <th>Rangpunkte</th>
                         </tr>
                     </thead>
-                    <tbody id="da">
+                    <tbody>
                         <tr>
                             <td>75%</td>
                             <td>Schriftliche Ausarbeitung</td>
@@ -224,7 +224,7 @@
                         <tr>
                             <td>Durchschnitt</td>
                             <td></td>
-                            <td id="da_ergebnis" name="ergebnis">0 RP</td>
+                            <td class="da_ergebnis"></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -235,10 +235,10 @@
                     <thead>
                         <tr>
                             <th>Praktikum</th>
-                            <th>Notenpunkte</th>
+                            <th>Rangpunkte</th>
                         </tr>
                     </thead>
-                    <tbody id="praktika">
+                    <tbody>
                         <tr>
                             <td>Praktikum 1</td>
                             <td><input type="number" name="praktika"></td>
@@ -255,7 +255,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="praktika_ergebnis" name="ergebnis">0 RP</td>
+                            <td class="praktika_ergebnis"></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -263,46 +263,49 @@
             <div>
                 <button type="button" id="button_berechnen">Durchschnittsnote
                     berechnen</button>
-                    <h2>Gesamtnote</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Gewichtung</th>
-                                <th>Leistung</th>
-                                <th>Rangpunkte</th>
-                            </tr>
-                        </thead>
-                        <tbody id="praktika">
-                            <tr>
-                                <td>Grundstudium</td>
-                                <td><input type="number" name="praktika"></td>
-                            </tr>
-                            <tr>
-                                <td>Praktika</td>
-                                <td><input type="number" name="praktika"></td>
-                            </tr>
-                            <tr>
-                                <td>Hauptstudium</td>
-                                <td><input type="number" name="praktika"></td>
-                            </tr>
-                            <tr>
-                                <td>Diplomarbeit</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Gesamtdurchschnitt</td>
-                                <td id="gesamt_ergebnis" name="ergebnis">0 RP</td>
-                            </tr>
-                            <tr>
-                                <td>Gesamtdurchschnitt als Dezimalzahl</td>
-                                <td id="gesamt_ergebnis_dezimal" name="ergebnis"></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-               
+                <h2>Gesamtnote</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gewichtung</th>
+                            <th>Leistung</th>
+                            <th>Rangpunkte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5 %</td>
+                            <td>Grundstudium</td>
+                            <td class="gs_ergebnis"></td>
+                        </tr>
+                        <tr>
+                            <td>5 %</td>
+                            <td>Praktika</td>
+                            <td class="praktika_ergebnis"></td>
+                        </tr>
+                        <tr>
+                            <td>70 %</td>
+                            <td>Hauptstudium</td>
+                            <td class="hs_ergebnis"></td>
+                        </tr>
+                        <tr>
+                            <td>20 %</td>
+                            <td>Diplomarbeit</td>
+                            <td class="da_ergebnis"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Gesamtdurchschnitt</td>
+                            <td id="gesamt_ergebnis"></td>
+                        </tr>
+                        <tr>
+                            <td>Gesamtdurchschnitt als Dezimalzahl</td>
+                            <td id="gesamt_ergebnis_dezimal"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
             </div>
         </div>
         <footer>
