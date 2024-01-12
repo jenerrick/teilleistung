@@ -178,15 +178,26 @@ function gib_aus(ausgabefeld, durchschnitt) {
 /**
  * Dies ist der EventListener für den Berechnen-Button. Klickt der User den Button werden die Funktionen zur Berechnung der Durchschnittsnote aufgerufen.
  */
-document.getElementById("button_berechnen").addEventListener(
-    "click",
-    function () {
-        berechneZwischenergebnis("gs")
-        berechneZwischenergebnis("hs")
-        berechneZwischenergebnisDA()
-        berechneZwischenergebnis("praktika")
-        berechneDurchschnittsnote()
-    }
+
+
+function init() {
+    document.getElementById("button_berechnen").addEventListener(
+        "click",
+        function () {
+            berechneZwischenergebnis("gs")
+            berechneZwischenergebnis("hs")
+            berechneZwischenergebnisDA()
+            berechneZwischenergebnis("praktika")
+            berechneDurchschnittsnote()
+        }
+    )
+}
+
+window.addEventListener(
+    "DOMContentLoaded",
+    init
 )
+
+
 
 
