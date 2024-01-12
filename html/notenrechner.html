@@ -27,7 +27,7 @@
                     <thead>
                         <tr>
                             <th>Modul</th>
-                            <th>Notenpunkte</th>
+                            <th>Rangpunkte</th>
                         </tr>
                     </thead>
                     <tbody id="gs">
@@ -57,7 +57,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="gs_ergebnis" name="ergebnis">0 NP</td>
+                            <td id="gs_ergebnis" name="ergebnis">0 RP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -68,7 +68,7 @@
                     <thead>
                         <tr>
                             <th>Modul</th>
-                            <th>Notenpunkte</th>
+                            <th>Rangpunkte</th>
                         </tr>
                     </thead>
                     <tbody id="h1">
@@ -102,7 +102,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="h1_ergebnis" name="hs_ergebnis">0 NP</td>
+                            <td id="h1_ergebnis" name="hs_ergebnis">0 RP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -147,7 +147,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="h2_ergebnis" name="hs_ergebnis">0 NP</td>
+                            <td id="h2_ergebnis" name="hs_ergebnis">0 RP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -188,7 +188,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="h3_ergebnis" name="hs_ergebnis">0 NP</td>
+                            <td id="h3_ergebnis" name="hs_ergebnis">0 RP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -224,7 +224,7 @@
                         <tr>
                             <td>Durchschnitt</td>
                             <td></td>
-                            <td id="da_ergebnis" name="ergebnis">0 NP</td>
+                            <td id="da_ergebnis" name="ergebnis">0 RP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -255,7 +255,7 @@
                     <tfoot>
                         <tr>
                             <td>Durchschnitt</td>
-                            <td id="praktika_ergebnis" name="ergebnis">0 NP</td>
+                            <td id="praktika_ergebnis" name="ergebnis">0 RP</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -263,7 +263,46 @@
             <div>
                 <button type="button" id="button_berechnen">Durchschnittsnote
                     berechnen</button>
-                <p id="gesamt_ergebnis">Die gesamte Durchschnittsnote beträgt 0 NP</p>
+                    <h2>Gesamtnote</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Gewichtung</th>
+                                <th>Leistung</th>
+                                <th>Rangpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody id="praktika">
+                            <tr>
+                                <td>Grundstudium</td>
+                                <td><input type="number" name="praktika"></td>
+                            </tr>
+                            <tr>
+                                <td>Praktika</td>
+                                <td><input type="number" name="praktika"></td>
+                            </tr>
+                            <tr>
+                                <td>Hauptstudium</td>
+                                <td><input type="number" name="praktika"></td>
+                            </tr>
+                            <tr>
+                                <td>Diplomarbeit</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Gesamtdurchschnitt</td>
+                                <td id="gesamt_ergebnis" name="ergebnis">0 RP</td>
+                            </tr>
+                            <tr>
+                                <td>Gesamtdurchschnitt als Dezimalzahl</td>
+                                <td id="gesamt_ergebnis_dezimal" name="ergebnis"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+               
             </div>
         </div>
         <footer>
