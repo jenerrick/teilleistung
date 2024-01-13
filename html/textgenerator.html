@@ -1,136 +1,79 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Textgenerator</title>
-        <link rel="stylesheet" href="../css/basic_style.css">
-    </head>
-    <body>
-        <header>
-            <h1>VITHub</h1>
-            <nav>
-                <ul class="navigationsliste">
-                    <li><a href="passwortgenerator.html">Passwortgenerator</a></li>
-                    <li><a href="textgenerator.html">Textgenerator</a></li>
-                    <li><a href="iprechner.html">IPv4-Adressrechner</a></li>
-                    <li><a href="notenrechner.html">Notenrechner</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="main-box">
-            <form action="foo">
-                <fieldset>
-                    <!-- list available blindtexts-->
-                    <label class="left">Blindtext</label>
-                    <fieldset id="idTextname">
-                        <input id="idRadioTextname-ANY-lorem"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="1" checked="checked" /><label
-                            for="idRadioTextname-ANY-lorem">Lorem ipsum
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-lorem"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="2" /><label
-                            for="idRadioTextname-DE-lorem">Lorem ipsum auf
-                            Deutsch
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-ANY-li-europan"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="3" /><label
-                            for="idRadioTextname-ANY-li-europan">Li Europan
-                            lingues
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-far-away-behind"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="4" /><label
-                            for="idRadioTextname-DE-far-away-behind">Hinter den
-                            Wortbergen
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-werther"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="5" /><label
-                            for="idRadioTextname-DE-werther">Werther
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-kafka"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="6" /><label
-                            for="idRadioTextname-DE-kafka">Kafka
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-trapattoni"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="7" /><label
-                            for="idRadioTextname-DE-trapattoni">Trapattoni '98
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-er-hoerte-leise"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="8" /><label
-                            for="idRadioTextname-DE-er-hoerte-leise">Er hörte
-                            leise
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-typoblindtext"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="9" /><label
-                            for="idRadioTextname-DE-typoblindtext">Typoblindtext
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-webstandards"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="10" /><label
-                            for="idRadioTextname-DE-webstandards">Webstandards
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-pangram"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="11" /><label
-                            for="idRadioTextname-DE-pangram">Pangramm
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                        <input id="idRadioTextname-DE-a-z-1"
-                            class="js-textname iradio" type="radio"
-                            name="radioTextname" value="12" /><label
-                            for="idRadioTextname-DE-a-z-1">a-z A-Z 123 öüä
-                        </label> <!--<a href="#"><strong>»</strong></a>--><br />
-                    </fieldset>
-                    <fieldset>
-                        <!-- number of words or chars-->
-                        <label class="left">Anzahl</label>
-                        <input id="idInputWords" class="itext_short mb_10"
-                            style="float:left;" type="text" value="200" />
-                        <div class="irocker"><a id="idWordsUp" class="up"
-                                href="#">mehr</a><a id="idWordsDown"
-                                class="down" href="#">weniger</a></div>
-                        <input id="idRadioWords" class="iradio" type="radio"
-                            name="radioWC" value="1" checked="checked" />
-                        <label for="idRadioWords">Wörter</label>
-                        <input id="idRadioChars" class="iradio ml_5"
-                            type="radio" name="radioWC" value="2" />
-                        <label for="idRadioChars">Zeichen</label><br />
-                        <!-- number of paragraphs-->
-                        <input id="idInputParas" class="itext_shorter right"
-                            type="text" value="1" />
-                        <div class="irocker"><a id="idParasUp" class="up"
-                                href="#">mehr</a><a id="idParasDown"
-                                class="down" href="#">weniger</a></div>
-                        <label for="idInputParas">Absätze</label><br />
-                    </fieldset>
-                    <!-- output <p>-tags -->
-                    <label class="left">Ausgabe</label>
-                    <input id="idCheckPTags" class="icheck" type="checkbox" />
-                    <label for="idCheckPTags">&lt;p&gt; tags ausgeben</label>
-                </fieldset>
-            </form>
-            <div>
-                <button>Alles markieren</button>
-                <button>Alles kopieren</button>
-            </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textgenerator</title>
+    <link rel="stylesheet" href="../css/basic_style.css">
+</head>
+
+<body>
+    <header>
+        <h1>VITHub</h1>
+        <nav>
+            <ul class="navigationsliste">
+                <li><a href="passwortgenerator.html">Passwortgenerator</a></li>
+                <li><a href="textgenerator.html">Textgenerator</a></li>
+                <li><a href="iprechner.html">IPv4-Adressrechner</a></li>
+                <li><a href="notenrechner.html">Notenrechner</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-box">
+        <h1>Blindtextgenerator</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptas dicta facilis doloremque dolor dolore ab sequi dignissimos. Nesciunt voluptates velit aliquam repellendus pariatur delectus magnam beatae cupiditate incidunt ipsa.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, fuga quaerat. Reiciendis eveniet, ut, voluptate molestiae enim ratione, molestias officiis aliquam cumque dolores vitae exercitationem! Labore beatae minus quidem alias?</p>
+        <div>
+            <label for="textname">Blindtext</label>
+            <select id="textname">
+                <option value="1">Lorem ipsum</option>
+                <option value="2">Lorem ipsum auf Deutsch</option>
+                <!-- Weitere Optionen hier -->
+            </select>
         </div>
-        <footer>
-            <div>
-                <ul class="footerliste">
-                    <li><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
-                    <li><a href="überuns.html">Über uns</a></li>
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="layout.html">Layout-Einstellungen</a></li>
-                </ul>
-            </div>
-        </footer>
-    </body>
+
+        <div>
+            <label for="inputWords">Anzahl</label>
+            <input id="inputWords" type="text" value="200" />
+            <button id="wordsUp">mehr</button>
+            <button id="wordsDown">weniger</button>
+
+            <input type="radio" id="radioWords" name="radioWC" value="1" checked>
+            <label for="radioWords">Wörter</label>
+
+            <input type="radio" id="radioChars" name="radioWC" value="2">
+            <label for="radioChars">Zeichen</label>
+        </div>
+
+        <div>
+            <label for="inputParas">Absätze</label>
+            <input id="inputParas" type="text" value="1" />
+            <button id="parasUp">mehr</button>
+            <button id="parasDown">weniger</button>
+        </div>
+
+        <div>
+            <label for="checkPTags">Ausgabe</label>
+            <input id="checkPTags" type="checkbox" />
+            <label for="checkPTags">&lt;p&gt; tags ausgeben</label>
+        </div>
+
+        <div>
+            <button id="selectAll">Alles markieren</button>
+            <button id="copyAll">Alles kopieren</button>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <ul class="footerliste">
+                <li><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
+                <li><a href="überuns.html">Über uns</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="layout.html">Layout-Einstellungen</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
 </html>
