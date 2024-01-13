@@ -175,11 +175,11 @@ function gib_aus(ausgabefeld, durchschnitt) {
 
 }
 
+
+
 /**
- * Dies ist der EventListener für den Berechnen-Button. Klickt der User den Button werden die Funktionen zur Berechnung der Durchschnittsnote aufgerufen.
+ * Die Funktion init fügt einen EventListener auf den Button hinzu, der die weiteren Funktionen zur Berechnung aufruft
  */
-
-
 function init() {
     document.getElementById("button_berechnen").addEventListener(
         "click",
@@ -193,6 +193,9 @@ function init() {
     )
 }
 
+/**
+ * Dieser EventListener wartet darauf, dass das DOM fertig geladen ist und ruft dann die Funktion init auf.
+ */
 window.addEventListener(
     "DOMContentLoaded",
     init
