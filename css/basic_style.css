@@ -20,6 +20,7 @@ footer, header {
 .main-box {
     width: 1000px;
     margin-bottom: 5em;
+    flex: auto;
 }
 header h1 {
     margin: 0;
