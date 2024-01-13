@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Textgenerator</title>
     <link rel="stylesheet" href="../css/basic_style.css">
+    <link rel="stylesheet" href="../css/textgenerator.css">
+    <script src="../js/textgenerator.js"></script>
 </head>
 
 <body>
@@ -25,25 +27,19 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus voluptas dicta facilis doloremque dolor dolore ab sequi dignissimos. Nesciunt voluptates velit aliquam repellendus pariatur delectus magnam beatae cupiditate incidunt ipsa.</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, fuga quaerat. Reiciendis eveniet, ut, voluptate molestiae enim ratione, molestias officiis aliquam cumque dolores vitae exercitationem! Labore beatae minus quidem alias?</p>
         <div>
-            <label for="textname">Blindtext</label>
-            <select id="textname">
-                <option value="1">Lorem ipsum</option>
-                <option value="2">Lorem ipsum auf Deutsch</option>
+            <label for="select_textname">Blindtext</label>
+            <select id="select_textname">
+                <option value="0">Lorem ipsum</option>
+                <option value="1">I have a dream</option>
                 <!-- Weitere Optionen hier -->
             </select>
         </div>
 
         <div>
-            <label for="inputWords">Anzahl</label>
-            <input id="inputWords" type="text" value="200" />
-            <button id="wordsUp">mehr</button>
-            <button id="wordsDown">weniger</button>
-
-            <input type="radio" id="radioWords" name="radioWC" value="1" checked>
-            <label for="radioWords">Wörter</label>
-
-            <input type="radio" id="radioChars" name="radioWC" value="2">
-            <label for="radioChars">Zeichen</label>
+            <label for="text_länge">Wörter</label>
+            <input id="text_länge" type="number" value="200" min="0" max="9999"/>
+            <button id="wörter_plus">mehr</button>
+            <button id="wörter_minus">weniger</button>
         </div>
 
         <div>
@@ -60,9 +56,11 @@
         </div>
 
         <div>
+            <button id="button_generieren">Text generieren</button>
             <button id="selectAll">Alles markieren</button>
             <button id="copyAll">Alles kopieren</button>
         </div>
+        <div id="ergebnis_text"></div>
     </div>
     <footer>
         <div>
