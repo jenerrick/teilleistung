@@ -31,22 +31,21 @@
             <select id="select_textname">
                 <option value="0">Lorem ipsum</option>
                 <option value="1">I have a dream</option>
-                <!-- Weitere Optionen hier -->
             </select>
         </div>
 
         <div>
             <label for="text_länge">Wörter</label>
-            <input id="text_länge" type="number" value="200" min="0" max="9999"/>
+            <input id="text_länge" type="number" value="200" min="1" max="9999"/>
             <button id="wörter_plus">mehr</button>
             <button id="wörter_minus">weniger</button>
         </div>
 
         <div>
-            <label for="inputParas">Absätze</label>
-            <input id="inputParas" type="text" value="1" />
-            <button id="parasUp">mehr</button>
-            <button id="parasDown">weniger</button>
+            <label for="absätze_anzahl">Absätze</label>
+            <input id="absätze_anzahl" type="number" value="1" min="1" max="9999"/>
+            <button id="absätze_plus">mehr</button>
+            <button id="absätze_minus">weniger</button>
         </div>
 
         <div>
@@ -57,10 +56,14 @@
 
         <div>
             <button id="button_generieren">Text generieren</button>
-            <button id="selectAll">Alles markieren</button>
-            <button id="copyAll">Alles kopieren</button>
+            <button id="button_auswählen">Alles markieren</button>
+            <button id="button_kopieren">Alles kopieren</button>
         </div>
-        <div id="ergebnis_text"></div>
+        <div id="div_ausgabe_und_hinweis">
+            <p id="hinweis">Der Text wurde erfolgreich kopiert</p>
+            <div id="div_ausgabe"></div>
+        </div>   
+        </div>
     </div>
     <footer>
         <div>
