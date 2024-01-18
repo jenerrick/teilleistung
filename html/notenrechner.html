@@ -15,9 +15,9 @@
     <script src="../js/notenrechner.js"></script>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-secondary" id="body">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.html">VITHub</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -38,17 +38,17 @@
             </div>
         </nav>
     </header>
-    <div class="container mt-5">
-        <div class="col-12 bg-light p-3 rounded my-3">
+    <div class="container mt-5 bg-dark text-light" id="main-container">
+        <div class="col-12 p-3 rounded my-3">
             <h1>Notenrechner</h1>
             <p>Mit diesem Notenrechner kannst du die Durchschnittsnote für das VIT-Studium ausrechnen. Trage dazu
                 einfach deine Rangpunkte in die entsprechenden Felder ein und klicke anschließend auf den Button
                 "Durchschnittsnote berechnen". Es sind nur Dezimalzahlen von 0-15 erlaubt.
                 Der Notenrechner errechnet zunächst die durchschnittlichen Rangpunkte der einzelnen Bestandteile
                 Grundstudium, Hauptstudium, Diplomarbeit und Pratika. Diese werden dann
-                <a href="https://www.gesetze-im-internet.de/gvidvdv/__24.html">gewichtet zur
+                <a class="a-dark" href="https://www.gesetze-im-internet.de/gvidvdv/__24.html">gewichtet zur
                     Durchschnittsrangpunktzahl</a> für das gesamte Studium aufaddiert. Aus dieser wird dann die
-                <a href="https://www.gesetze-im-internet.de/gvidvdv/anlage.html">Durchschnittsnote als Dezimalzahl</a>
+                <a class="a-dark" href="https://www.gesetze-im-internet.de/gvidvdv/anlage.html">Durchschnittsnote als Dezimalzahl</a>
                 gebildet. Fehlen noch Noten für einzelne Praktika oder Module des Studiums, dann lass die entsprechenden
                 Felder einfach leer. Diese Felder werden für die Durchschnittsberechnung der einzelnen Bestandteile
                 ignoriert.
@@ -57,7 +57,7 @@
         <div class="row p-3">
             <div class="col-md-6">
                 <h2>Grundstudium</h2>
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>Modul</th>
@@ -98,7 +98,7 @@
             </div>
             <div class="col-md-6">
                 <h2>Pratika</h2>
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>Praktikum</th>
@@ -131,7 +131,7 @@
         <div class="row p-3">
             <div class="col-12">
                 <h2>Hauptstudium</h2>
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>Modul</th>
@@ -225,7 +225,7 @@
         <div class="row p-3">
             <div class="col-md-6">
                 <h2>Diplomarbeit</h2>
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>Gewichtung</th>
@@ -264,7 +264,7 @@
 
             <div class="col-md-6">
                 <h2>Gesamtnote</h2>
-                <table class="table">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th>Gewichtung</th>
@@ -311,7 +311,7 @@
             </div>
         </div>
     </div>
-    <footer class="mt-auto bg-dark">
+    <footer class="mt-auto bg-dark" id="footer">
         <div class="container">
             <ul class="list-inline text-center mb-0 py-3">
                 <li class="list-inline-item"><a class="text-light footer-links" href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
