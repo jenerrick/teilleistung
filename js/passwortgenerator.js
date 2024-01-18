@@ -1,24 +1,4 @@
 /**
- * Die Funktion init fügt als erstes einen EventListener zum Button hinzu. Wird dieser gedrückt, wird die Funktion für die Passwortgenerierung aufgerufen.
- * Sie fügt außerdem einen EventListener zum Schieberegler hinzu. Wird dieser bewegt, soll der aktuelle Wert im span-Element mit der id länge_anzeigen angezeigt werden.
- */
-function init() {
-    document.getElementById("button_generieren").addEventListener("click", passwortGenerieren);
-
-    document.getElementById("passwort_länge").addEventListener("input", function () {
-        document.getElementById("länge_anzeigen").innerText = this.value;
-    });
-}
-/**
- * Dieser EventListener wartet bis das DOM komplett geladen ist und ruft dann die Funktion init auf.
- */
-window.addEventListener(
-    "DOMContentLoaded",
-    init
-)
-
-
-/**
  * Die Funktion generiert ein Passwort mit benutzerdefinierter Länge  und Zeichensatz. Dazu wird die Länge aus dem HTML-Schieberegler in der variable länge gespeichert.
  * Der Status der Checkboxen wird ebenfalls in dazu passenden Variablen gespeichert. Dann werden vier Variblen deklariert, die jeweils einen bestimmten Zeichensatz enthalten.
  * Anschließend wird die Variable passwort_zeichensatz deklariert, die einen leeren String enthält. Dieser String wird um die Zeichensätze der vorherigen Variablen
@@ -50,7 +30,7 @@ function passwortGenerieren() {
     let passwort_zeichensatz = ""
 
     if (kleinbuchstaben_checkbox) passwort_zeichensatz += kleinbuchstaben
-    if (großbuchstaben_checkbox) passwort_zeichensatz+= großbuchstaben
+    if (großbuchstaben_checkbox) passwort_zeichensatz += großbuchstaben
     if (ziffern_checkbox) passwort_zeichensatz += ziffern
     if (sonderzeichen_checkbox) passwort_zeichensatz += sonderzeichen
 
@@ -64,8 +44,77 @@ function passwortGenerieren() {
         let random_index = Math.floor(Math.random() * passwort_zeichensatz.length)
         passwort += passwort_zeichensatz[random_index]
     }
+    gib_aus(passwort)
 
-    document.getElementById("ergebnis_passwort").innerText = passwort
-    document.getElementById("ergebnis_passwort").style.display = "block"
 }
+
+function gib_aus(passwort) {
+    document.getElementById("div_ausgabe").innerText = passwort
+    passwortAusblenden()
+}
+
+async function writeClipboardText() {
+    let text = document.getElementById("div_ausgabe").innerText
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+/**
+ * Diese Funktion blendet einen Hinweis ein, der dem User signalisiert, dass der Text erfolgreich kopiert wurde.
+ */
+function zeigeHinweis() {
+    // Das Hinweis-Div sichtbar machen
+    var hinweisDiv = document.getElementById("hinweis");
+    hinweisDiv.style.display = "block";
+    // Animation, indem die Opazität auf 1 gesetzt wird
+    hinweisDiv.style.opacity = "1";
+
+    // Nach 5 Sekunden den Hinweis ausblenden
+    setTimeout(function () {
+        // Animation, indem die Opazität auf 0 gesetzt wird
+        hinweisDiv.style.opacity = "0";
+
+        // Nach der Animation das Div ausblenden
+        setTimeout(function () {
+            hinweisDiv.style.display = "none";
+        }, 2000); // Setze dies auf die gleiche Dauer wie die Transition-Dauer
+    }, 5000);
+}
+function passwortAusblenden() {
+    setTimeout(function() {
+        var meineDiv = document.getElementById("div_ausgabe");
+    
+        // Überprüfen Sie, ob die <div> gefunden wurde
+        if (meineDiv) {
+            // Löschen Sie den Inhalt der <div>
+            meineDiv.innerText = '';
+        }
+    }, 10000);
+}
+/**
+ * Die Funktion init fügt als erstes einen EventListener zum Button hinzu. Wird dieser gedrückt, wird die Funktion für die Passwortgenerierung aufgerufen.
+ * Sie fügt außerdem einen EventListener zum Schieberegler hinzu. Wird dieser bewegt, soll der aktuelle Wert im span-Element mit der id länge_anzeigen angezeigt werden.
+ */
+function init() {
+    document.getElementById("button_generieren").addEventListener("click", passwortGenerieren);
+
+    document.getElementById("passwort_länge").addEventListener("input", function () {
+        document.getElementById("länge_anzeigen").innerText = this.value
+    })
+
+    document.getElementById("button_kopieren").addEventListener("click", function () {
+        writeClipboardText(),
+            zeigeHinweis()
+    })
+}
+/**
+ * Dieser EventListener wartet bis das DOM komplett geladen ist und ruft dann die Funktion init auf.
+ */
+window.addEventListener(
+    "DOMContentLoaded",
+    init
+)
 

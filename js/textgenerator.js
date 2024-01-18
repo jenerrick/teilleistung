@@ -223,7 +223,7 @@ function init() {
         checkMin1(absätze_anzahl)
     })
 
-    document.getElementById("button_auswählen").addEventListener("click", markiereText)
+    
     document.getElementById("button_kopieren").addEventListener("click", function () {
         writeClipboardText(),
             zeigeHinweis()
