@@ -56,9 +56,9 @@ function gib_aus(passwort) {
 async function writeClipboardText() {
     let text = document.getElementById("div_ausgabe").innerText
     try {
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(text)
     } catch (error) {
-        console.error(error.message);
+        console.error(error.message)
     }
 }
 
@@ -67,46 +67,58 @@ async function writeClipboardText() {
  */
 function zeigeHinweis() {
     // Das Hinweis-Div sichtbar machen
-    let hinweisP = document.getElementById("hinweis")
-    let passwortDiv = document.getElementById("div_ausgabe")
-    hinweisP.style.display = "block";
-    if(passwortDiv.innerText == "") {
-        hinweisP.innerText = "Kein Passwort generiert!"
+    let hinweisDiv = document.getElementById("hinweis")
+    hinweisDiv.innerHTML = ""
+
+    let icon = document.createElement("i")
+    let hinweisP = document.createElement("p")
+
+    if (document.getElementById("div_ausgabe").innerText == "") {
+        icon.classList.add("bi")
+        icon.classList.add("bi-exclamation-triangle")
+        hinweisP.appendChild(icon)
+        hinweisP.innerHTML += " Kein Passwort generiert!"
+
     } else {
-        hinweisP.innerText = "Passwort erfolgreich kopiert"
+        icon.classList.add("bi")
+        icon.classList.add("bi-check-circle")
+        hinweisP.appendChild(icon)
+        hinweisP.innerHTML += " Passwort erfolgreich kopiert"
+
     }
+    hinweisDiv.appendChild(hinweisP)
+    hinweisDiv.style.display = "block"
+    hinweisDiv.style.opacity = "1"
 
-    // Animation, indem die Opazität auf 1 gesetzt wird
-    hinweisP.style.opacity = "1";
 
-    // Nach 5 Sekunden den Hinweis ausblenden
+
     setTimeout(function () {
         // Animation, indem die Opazität auf 0 gesetzt wird
-        hinweisP.style.opacity = "0";
+        hinweisDiv.style.opacity = "0"
 
         // Nach der Animation das Div ausblenden
         setTimeout(function () {
-            hinweisP.style.display = "none";
-        }, 2000); // Setze dies auf die gleiche Dauer wie die Transition-Dauer
-    }, 5000);
+            hinweisDiv.style.display = "none"
+        }, 2000) // Setze dies auf die gleiche Dauer wie die Transition-Dauer
+    }, 5000)
 }
 function passwortAusblenden() {
-    setTimeout(function() {
-        var meineDiv = document.getElementById("div_ausgabe");
-    
+    setTimeout(function () {
+        let hinweisDiv = document.getElementById("div_ausgabe")
+
         // Überprüfen Sie, ob die <div> gefunden wurde
-        if (meineDiv) {
+        if (hinweisDiv) {
             // Löschen Sie den Inhalt der <div>
-            meineDiv.innerText = '';
+            hinweisDiv.innerHTML = ''
         }
-    }, 10000);
+    }, 10000)
 }
 /**
  * Die Funktion init fügt als erstes einen EventListener zum Button hinzu. Wird dieser gedrückt, wird die Funktion für die Passwortgenerierung aufgerufen.
  * Sie fügt außerdem einen EventListener zum Schieberegler hinzu. Wird dieser bewegt, soll der aktuelle Wert im span-Element mit der id länge_anzeigen angezeigt werden.
  */
 function init() {
-    document.getElementById("button_generieren").addEventListener("click", passwortGenerieren);
+    document.getElementById("button_generieren").addEventListener("click", passwortGenerieren)
 
     document.getElementById("passwort_länge").addEventListener("input", function () {
         document.getElementById("länge_anzeigen").innerText = this.value
