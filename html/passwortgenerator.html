@@ -5,27 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passwortgenerator - VITHub</title>
-    <link rel="stylesheet" href="../css/basic_style.css">
+
     <link rel="stylesheet" href="../css/passwortgenerator.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="../js/passwortgenerator.js"></script>
 </head>
 
 <body>
     <header>
-        <h1><a href="./index.html">VITHub</a></h1>
-        <nav>
-            <ul class="navigationsliste">
-                <li><a href="passwortgenerator.html">Passwortgenerator</a></li>
-                <li><a href="textgenerator.html">Textgenerator</a></li>
-                <li><a href="notenrechner.html">Notenrechner</a></li>
-                <li><a href="layout.html">Design anpassen</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">VITHub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="passwortgenerator.html">Passwortgenerator</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="textgenerator.html">Textgenerator</a></li>
+                        <li class="nav-item"><a class="nav-link" href="notenrechner.html">Notenrechner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="layout.html">Design anpassen</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <div class="main-box">
-        <h1>Passwortgenerator</h1>
-        <p>Falls du mal ein anderes Passwort als Starten1 für private Zwecke benötigst, kannst du unseren Passwortgenerator nutzen. Anhand des Schiebereglers kann die Länge des Passworts bestimmt werden.</p>
-        <p>Außerdem kann mit den Checkboxen festgelegt werden, welche Zeichen das Passwort enthalten soll. Mit einem Klick auf Generieren wird das Passwort generiert, ausgegeben und steht zur Verfügung bereit.</p>
+    <div class="container mt-5">
+        <div class="col-12 bg-light p-5 rounded my-3">
+            <h1>Passwortgenerator</h1>
+            <p>Falls du mal ein anderes Passwort als "Starten1" für private Zwecke benötigst, kannst du unseren
+                Passwortgenerator nutzen. Anhand des Schiebereglers kann die Länge des Passworts bestimmt werden.
+                Außerdem kann mit den Checkboxen festgelegt werden, welche Zeichen das Passwort enthalten soll. Mit
+                einem Klick auf Generieren wird das Passwort generiert, ausgegeben und steht zur Verfügung bereit. Mit einem
+                Klick auf "Alles kopieren" wird das Passwort in die Zwischenablage kopiert. Aus Sicherheitsgründen
+                verschwindet ein generiertes Passwort nach 10 Sekunden</p>
+            <p>Grundsätzlich gilt: Je länger, desto sicherer. Wir orientieren uns am Bundesamt für Sicherheit in der
+                Informationstechnik und empfehlen, <a
+                    href="https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Accountschutz/Sichere-Passwoerter-erstellen/sichere-passwoerter-erstellen_node.html">mindestens
+                    8 Zeichen</a>
+                zu verwenden. Neben einem starken Passwort kann zusätzliche Sicherheit durch die Nutzung von <a
+                    href="https://www.bsi.bund.de/DE/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Accountschutz/Zwei-Faktor-Authentisierung/zwei-faktor-authentisierung_node.html">Zwei-Faktor-Authentisierung</a>
+                erlangt werden.</p>
+        </div>
         <div id="passwortgenerator">
             <label for="passwort_länge">Passwortlänge: </label>
             <input type="range" id="passwort_länge" min="4" max="64" value="12">
@@ -40,19 +67,23 @@
                 <label><input type="checkbox" id="sonderzeichen_checkbox">
                     Sonderzeichen</label>
             </div>
-
-            <button id="button_generieren">Generieren</button>
-
-            <div id="ergebnis_passwort"></div>
+            <div>
+                <button class="btn btn-primary" id="button_generieren">Text generieren</button>
+                <button class="btn btn-primary" id="button_kopieren">Alles kopieren</button>
+            </div>
+            <div id="div_ausgabe_und_hinweis">
+                <p id="hinweis">Der Text wurde erfolgreich kopiert</p>
+                <div id="div_ausgabe"></div>
+            </div>
         </div>
 
     </div>
-    <footer>
-        <div>
-            <ul class="footerliste">
-                <li><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
-                <li><a href="überuns.html">Über uns</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
+    <footer class="mt-5">
+        <div class="container">
+            <ul class="list-inline text-center">
+                <li class="list-inline-item"><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
+                <li class="list-inline-item"><a href="überuns.html">Über uns</a></li>
+                <li class="list-inline-item"><a href="impressum.html">Impressum</a></li>
             </ul>
         </div>
     </footer>

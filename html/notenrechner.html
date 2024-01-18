@@ -4,26 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/basic_style.css">
+
     <link rel="stylesheet" href="../css/notenrechner.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <title>Notenrechner - VITHub</title>
     <script src="../js/notenrechner.js"></script>
 </head>
 
 <body>
     <header>
-        <h1><a href="./index.html">VITHub</a></h1>
-        <nav>
-            <ul class="navigationsliste">
-                <li><a href="passwortgenerator.html">Passwortgenerator</a></li>
-                <li><a href="textgenerator.html">Textgenerator</a></li>
-                <li><a href="notenrechner.html">Notenrechner</a></li>
-                <li><a href="layout.html">Design anpassen</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">VITHub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="passwortgenerator.html">Passwortgenerator</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="textgenerator.html">Textgenerator</a></li>
+                        <li class="nav-item"><a class="nav-link" href="notenrechner.html">Notenrechner</a></li>
+                        <li class="nav-item"><a class="nav-link" href="layout.html">Design anpassen</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <div class="main-box">
-        <div>
+    <div class="container mt-5">
+        <div class="col-12 bg-light p-5 rounded my-3">
             <h1>Notenrechner</h1>
             <p>Mit diesem Notenrechner kannst du die Durchschnittsnote für das VIT-Studium ausrechnen. Trage dazu
                 einfach deine Rangpunkte in die entsprechenden Felder ein und klicke anschließend auf den Button
@@ -38,262 +52,274 @@
                 ignoriert.
             </p>
         </div>
-        <div>
-            <h2>Grundstudium</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Modul</th>
-                        <th>Rangpunkte</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Basisqualifikationen: Grundlagen der
-                            Rechnertechnik, Mathematik und Logik</td>
-                        <td><input type="number" name="gs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>Wirtschaftswissenschaften,
-                            Softwareengineering und Projektmanagement</td>
-                        <td><input type="number" name="gs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>Allgemeines Verwaltungsrecht, Einführung in
-                            die Aufgaben der Bundesverwaltung, Recht des
-                            öffentlichen Dienstes und
-                            Sozialwissenschaftliche Kompetenzen</td>
-                        <td><input type="number" name="gs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>Verfassungsrecht, Europarecht und
-                            Zivilrecht</td>
-                        <td><input type="number" name="gs" min="0" max="15"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Durchschnitt</td>
-                        <td class="gs_ergebnis"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <div>
-            <h2>Hauptstudium</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Modul</th>
-                        <th>Rangpunkte</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>M3: Datenbanksysteme</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M4: Betriebssysteme</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M5: IT-Architekturen und Rechnernetzwerke</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M6: IT-Sicherheit</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M7: Projektmanagement und
-                            Softwareengineering</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M8: Objektorientierte Programmierung</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M9: Modellierung von Systemen und Prozessen</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M10: Web-Technologie und Portallösungen</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M11: Grundlagen des E-Governments</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M12: ERP- und BI-Systeme</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M13: Informations- und Wissensmanagement</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M14: Servicemanagement und
-                            Rechenzentrumsbetrieb</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M22: Internes Rechnungswesen und
-                            Verwaltungsbetriebswirtschaftslehre</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M23: Qualitätsmanagement</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M34: Bundesverwaltung - Aufgabenwahrnehmung
-                            und Einsatz von Informationstechnologie</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M35: IT-Recht - inkl. Grundzüge der
-                            zielgruppenspezifischen Fachkommunikation</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>M36: Managementkonzepte in der
-                            Bundesverwaltung</td>
-                        <td><input type="number" name="hs" min="0" max="15"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Durchschnitt</td>
-                        <td class="hs_ergebnis"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <div>
-            <h2>Diplomarbeit</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Gewichtung</th>
-                        <th>Leistung</th>
-                        <th>Rangpunkte</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>75%</td>
-                        <td>Schriftliche Ausarbeitung</td>
-                        <td><input type="number" name="da" id="da_schriftlich" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>10%</td>
-                        <td>Präsentation</td>
-                        <td><input type="number" name="da" id="da_präsi" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>15%</td>
-                        <td>Disputation</td>
-                        <td><input type="number" name="da" id="da_disputation" min="0" max="15"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Durchschnitt</td>
-                        <td></td>
-                        <td class="da_ergebnis"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <div>
-            <h2>Pratika</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Praktikum</th>
-                        <th>Rangpunkte</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Praktikum 1</td>
-                        <td><input type="number" name="praktika" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>Praktikum 2</td>
-                        <td><input type="number" name="praktika" min="0" max="15"></td>
-                    </tr>
-                    <tr>
-                        <td>Praktikum 3</td>
-                        <td><input type="number" name="praktika" min="0" max="15"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Durchschnitt</td>
-                        <td class="praktika_ergebnis"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <button type="button" id="button_berechnen">Durchschnittsnote
-            berechnen</button>
-        <div>
-            <h2>Gesamtnote</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Gewichtung</th>
-                        <th>Leistung</th>
-                        <th>Rangpunkte</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>5 %</td>
-                        <td>Grundstudium</td>
-                        <td class="gs_ergebnis"></td>
-                    </tr>
-                    <tr>
-                        <td>5 %</td>
-                        <td>Praktika</td>
-                        <td class="praktika_ergebnis"></td>
-                    </tr>
-                    <tr>
-                        <td>70 %</td>
-                        <td>Hauptstudium</td>
-                        <td class="hs_ergebnis"></td>
-                    </tr>
-                    <tr>
-                        <td>20 %</td>
-                        <td>Diplomarbeit</td>
-                        <td class="da_ergebnis"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Gesamtdurchschnitt</td>
-                        <td></td>
-                        <td class="gesamt_ergebnis"></td>
-                    </tr>
-                    <tr>
-                        <td>Gesamtdurchschnitt als Dezimalzahl</td>
-                        <td></td>
-                        <td class="gesamt_ergebnis_dezimal"></td>
-                    </tr>
-                </tfoot>
-            </table>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Hauptstudium</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Modul</th>
+                            <th>Rangpunkte</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label for="m3">M3: Datenbanksysteme</label></td>
+                            <td><input type="number" name="hs" id="m3" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m4">M4: Betriebssysteme</label></td>
+                            <td><input type="number" name="hs" id="m4" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m5">M5: IT-Architekturen und Rechnernetzwerke</label></td>
+                            <td><input type="number" name="hs" id="m5" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m6">M6: IT-Sicherheit</label></td>
+                            <td><input type="number" name="hs" id="m6" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m7">M7: Projektmanagement und
+                                Softwareengineering</label></td>
+                            <td><input type="number" name="hs" id="m7" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m8">M8: Objektorientierte Programmierung</label></td>
+                            <td><input type="number" name="hs" id="m8" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m9">M9: Modellierung von Systemen und Prozessen</label></td>
+                            <td><input type="number" name="hs" id="m9" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m10">M10: Web-Technologie und Portallösungen</label></td>
+                            <td><input type="number" name="hs" id="m10" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m11">M11: Grundlagen des E-Governments</label></td>
+                            <td><input type="number" name="hs" id="m11" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m12">M12: ERP- und BI-Systeme</label></td>
+                            <td><input type="number" name="hs" id="m12" min="0" max="15"></td></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m13">M13: Informations- und Wissensmanagement</label></td>
+                            <td><input type="number" name="hs" id="m13" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m14">M14: Servicemanagement und
+                                Rechenzentrumsbetrieb</td>
+                            <td><input type="number" name="hs" id="m14" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m22">M22: Internes Rechnungswesen und
+                                Verwaltungsbetriebswirtschaftslehre</td>
+                            <td><input type="number" name="hs" id="m22" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m23">M23: Qualitätsmanagement</td>
+                            <td><input type="number" name="hs" id="m23" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m34">M34: Bundesverwaltung - Aufgabenwahrnehmung
+                                und Einsatz von Informationstechnologie</td>
+                            <td><input type="number" name="hs" id="m34" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m35">M35: IT-Recht - inkl. Grundzüge der
+                                zielgruppenspezifischen Fachkommunikation</td>
+                            <td><input type="number" name="hs" id="m35" min="0" max="15"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="m36">M36: Managementkonzepte in der
+                                Bundesverwaltung</td>
+                            <td><input type="number" name="hs" id="m36" min="0" max="15"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Durchschnitt</td>
+                            <td class="hs_ergebnis"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Grundstudium</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Modul</th>
+                                    <th>Rangpunkte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><label for="gs_info">Basisqualifikationen: Grundlagen der
+                                        Rechnertechnik, Mathematik und Logik</label></td>
+                                    <td><input type="number" name="gs" id="gs_info" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="gs_wiwi">Wirtschaftswissenschaften,
+                                        Softwareengineering und Projektmanagement</label></td>
+                                    <td><input type="number" name="gs" id="gs_wiwi" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="gs_vwr">Allgemeines Verwaltungsrecht, Einführung in
+                                        die Aufgaben der Bundesverwaltung, Recht des
+                                        öffentlichen Dienstes und
+                                        Sozialwissenschaftliche Kompetenzen</label></td>
+                                    <td><input type="number" name="gs" id="gs_vwr" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="gs_verfassungsrecht">Verfassungsrecht, Europarecht und
+                                        Zivilrecht</label></td>
+                                    <td><input type="number" name="gs" id="gs_verfassungsrecht" min="0" max="15"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Durchschnitt</td>
+                                    <td class="gs_ergebnis"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Pratika</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Praktikum</th>
+                                    <th>Rangpunkte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><label for="praktikum_1">Praktikum 1</label></td>
+                                    <td><input type="number" name="praktika" id="praktikum_1" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="praktikum_2">Praktikum 2</label></td>
+                                    <td><input type="number" name="praktika" id="praktikum_2" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="praktikum_3">Praktikum 3</label></td>
+                                    <td><input type="number" name="praktika" id="praktikum_3" min="0" max="15"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Durchschnitt</td>
+                                    <td class="praktika_ergebnis"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Diplomarbeit</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Gewichtung</th>
+                                    <th>Leistung</th>
+                                    <th>Rangpunkte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>75%</td>
+                                    <td><label for="da_schriftlich">Ausarbeitung</label></td>
+                                    <td><input type="number" name="da" id="da_schriftlich" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td>10%</td>
+                                    <td><label for="da_präsi">Präsentation</label></td>
+                                    <td><input type="number" name="da" id="da_präsi" min="0" max="15"></td>
+                                </tr>
+                                <tr>
+                                    <td>15%</td>
+                                    <td><label for="da_disputation">Disputation</label></td>
+                                    <td><input type="number" name="da" id="da_disputation" min="0" max="15"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Durchschnitt</td>
+                                    <td></td>
+                                    <td class="da_ergebnis"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Gesamtnote</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Gewichtung</th>
+                                <th>Leistung</th>
+                                <th>Rangpunkte</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5 %</td>
+                                <td>Grundstudium</td>
+                                <td class="gs_ergebnis"></td>
+                            </tr>
+                            <tr>
+                                <td>5 %</td>
+                                <td>Praktika</td>
+                                <td class="praktika_ergebnis"></td>
+                            </tr>
+                            <tr>
+                                <td>70 %</td>
+                                <td>Hauptstudium</td>
+                                <td class="hs_ergebnis"></td>
+                            </tr>
+                            <tr>
+                                <td>20 %</td>
+                                <td>Diplomarbeit</td>
+                                <td class="da_ergebnis"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Gesamtdurchschnitt</td>
+                                <td></td>
+                                <td class="gesamt_ergebnis"></td>
+                            </tr>
+                            <tr>
+                                <td>Gesamtdurchschnitt als Dezimalzahl</td>
+                                <td></td>
+                                <td class="gesamt_ergebnis_dezimal"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <button class="btn btn-primary" type="button" id="button_berechnen">Durchschnittsnote
+                        berechnen</button>
+                </div>
+            </div>
         </div>
     </div>
-    <footer>
-        <div>
-            <ul class="footerliste">
-                <li><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
-                <li><a href="überuns.html">Über uns</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
+    <footer class="mt-5">
+        <div class="container">
+            <ul class="list-inline text-center">
+                <li class="list-inline-item"><a href="datenschutzerklärung.html">Datenschutzerklärung</a></li>
+                <li class="list-inline-item"><a href="überuns.html">Über uns</a></li>
+                <li class="list-inline-item"><a href="impressum.html">Impressum</a></li>
             </ul>
         </div>
     </footer>
