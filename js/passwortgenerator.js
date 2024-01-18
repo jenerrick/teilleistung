@@ -67,19 +67,26 @@ async function writeClipboardText() {
  */
 function zeigeHinweis() {
     // Das Hinweis-Div sichtbar machen
-    var hinweisDiv = document.getElementById("hinweis");
-    hinweisDiv.style.display = "block";
+    let hinweisP = document.getElementById("hinweis")
+    let passwortDiv = document.getElementById("div_ausgabe")
+    hinweisP.style.display = "block";
+    if(passwortDiv.innerText == "") {
+        hinweisP.innerText = "Kein Passwort generiert!"
+    } else {
+        hinweisP.innerText = "Passwort erfolgreich kopiert"
+    }
+
     // Animation, indem die Opazität auf 1 gesetzt wird
-    hinweisDiv.style.opacity = "1";
+    hinweisP.style.opacity = "1";
 
     // Nach 5 Sekunden den Hinweis ausblenden
     setTimeout(function () {
         // Animation, indem die Opazität auf 0 gesetzt wird
-        hinweisDiv.style.opacity = "0";
+        hinweisP.style.opacity = "0";
 
         // Nach der Animation das Div ausblenden
         setTimeout(function () {
-            hinweisDiv.style.display = "none";
+            hinweisP.style.display = "none";
         }, 2000); // Setze dies auf die gleiche Dauer wie die Transition-Dauer
     }, 5000);
 }

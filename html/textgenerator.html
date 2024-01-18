@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="index.html">VITHub</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,21 +30,22 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="textgenerator.html">Textgenerator</a></li>
                         <li class="nav-item"><a class="nav-link" href="notenrechner.html">Notenrechner</a></li>
-                        <li class="nav-item"><a class="nav-link" href="layout.html">Design anpassen</a></li>
+                        <li class="nav-item"><button class="btn btn-outline-dark">Dark Mode</button></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container mt-5">
-        <div class="col-12 bg-light p-5 rounded my-3">
+        <div class="col-12 bg-light p-3 rounded my-3">
             <h1>Blindtextgenerator</h1>
             <p>Blindtexte wie "Lorem Ipsum" werden in der Druck- und Designindustrie als Platzhaltertexte verwendet,
                 wenn
                 der endgültige Text für ein Layout noch nicht verfügbar ist. Der Begriff "Lorem Ipsum" stammt aus einem
                 <a href="https://de.wikipedia.org/wiki/De_finibus_bonorum_et_malorum">Abschnitt eines lateinischen
                     Textes
-                    von Cicero</a>, der für diesen Zweck stark abgewandelt wurde.</p>
+                    von Cicero</a>, der für diesen Zweck stark abgewandelt wurde.
+            </p>
             <p>Unser Textgenerator bietet über die Auswahlliste zwei Textarten an, einmal das Original, "Lorem Ipsum",
                 und
                 "Text schlendert durch die Zeilen". Nachdem der Text gewählt wurde, kannst du die Anzahl der zu
@@ -57,8 +58,8 @@
                 auch die Möglichkeit an, die einzelnen Absätze mit p-Tags zu umschließen, um sie sofort in HTML zu
                 nutzen.
             </p>
-            <p>Mit einem Klick auf generieren wird der Text wie gewünscht generiert. Die Buttons "Alles markieren" und
-                "Alles kopieren" sind Komfortfeatures, um den generierten Text zu markieren bzw. ihn direkt in die
+            <p>Mit einem Klick auf "Text generieren" wird der Text wie gewünscht generiert. Der Button "Alles kopieren"
+                ist ein Komfortfeature, um den generierten Text direkt in die
                 Zwischenablage zu kopieren.</p>
             <p>Transparenzhinweis: Die Grundlage für "Lorem Ipsum" haben wir durch die Nutzung von <a
                     href="https://docs.emmet.io/abbreviations/lorem-ipsum/">emmet</a> und für "Text schlendert durch die
@@ -67,40 +68,46 @@
                 Kurzgeschichte, die ca. 300 Wörter enthält und in der ein Text durch Zeilen schlendert und auf andere
                 Textarten trifft" erhalten.</p>
         </div>
-        <div>
-            <label for="select_textname">Blindtext</label>
-            <select id="select_textname">
-                <option value="0">Lorem ipsum</option>
-                <option value="1">Text schlendert durch die Zeilen</option>
-            </select>
+        <div class="row p-3">
+            <div>
+                <label for="select_textname">Blindtext</label>
+                <select id="select_textname">
+                    <option value="0">Lorem ipsum</option>
+                    <option value="1">Text schlendert durch die Zeilen</option>
+                </select>
+            </div>
         </div>
-
-        <div>
-            <label for="text_länge">Wörter</label>
-            <input id="text_länge" type="number" value="200" min="1" max="9999" />
-            <button class="btn btn-primary" id="wörter_plus">mehr</button>
-            <button class="btn btn-primary" id="wörter_minus">weniger</button>
+        <div class="row p-3">
+            <div>
+                <label for="text_länge">Wörter</label>
+                <input id="text_länge" type="number" value="200" min="1" max="9999" />
+                <button class="btn btn-primary" id="wörter_plus">mehr</button>
+                <button class="btn btn-primary" id="wörter_minus">weniger</button>
+            </div>
         </div>
-
-        <div>
-            <label for="absätze_anzahl">Absätze</label>
-            <input id="absätze_anzahl" type="number" value="1" min="1" max="9999" />
-            <button class="btn btn-primary" id="absätze_plus">mehr</button>
-            <button class="btn btn-primary" id="absätze_minus">weniger</button>
+        <div class="row p-3">
+            <div>
+                <label for="absätze_anzahl">Absätze</label>
+                <input id="absätze_anzahl" type="number" value="1" min="1" max="9999" />
+                <button class="btn btn-primary" id="absätze_plus">mehr</button>
+                <button class="btn btn-primary" id="absätze_minus">weniger</button>
+            </div>
         </div>
-
-        <div>
-            <label for="checkPTags">Ausgabe</label>
-            <input id="checkPTags" type="checkbox" />
-            <label for="checkPTags">&lt;p&gt; tags ausgeben</label>
+        <div class="row p-3">
+            <div>
+                <label for="checkPTags">Ausgabe</label>
+                <input id="checkPTags" type="checkbox" />
+                <label for="checkPTags">&lt;p&gt; tags ausgeben</label>
+            </div>
         </div>
-
-        <div>
-            <button class="btn btn-primary" id="button_generieren">Text generieren</button>
-            <button class="btn btn-primary" id="button_kopieren">Alles kopieren</button>
+        <div class="row p-3">
+            <div>
+                <button class="btn btn-primary" id="button_generieren">Text generieren</button>
+                <button class="btn btn-primary" id="button_kopieren">Alles kopieren</button>
+            </div>
         </div>
-        <div id="div_ausgabe_und_hinweis">
-            <p id="hinweis">Der Text wurde erfolgreich kopiert</p>
+        <div class="bg-light border border-2 p-3" id="div_ausgabe_und_hinweis">
+            <p class="text-primary" id="hinweis">Der Text wurde erfolgreich kopiert</p>
             <div id="div_ausgabe"></div>
         </div>
     </div>
