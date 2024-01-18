@@ -1,6 +1,10 @@
 .navbar-nav .nav-link:hover, .footer-links:hover {
     text-decoration: underline;
 }
+.a-dark {
+    color: rgb(232, 77, 14);
+}
+
 .footer-links {
     text-decoration: none;
 }
