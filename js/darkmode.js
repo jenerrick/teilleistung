@@ -2,6 +2,7 @@ function darkmodeUmschalten() {
     //Button
     let button_darkmode = document.getElementById("button_darkmode")
     let ist_gedrückt = button_darkmode.getAttribute("aria-pressed") == "true"
+    let symbol = document.querySelector("#button_darkmode i")
 
     //Einmalige Elemente mit querySelector
     let navbar = document.querySelector("nav")
@@ -20,18 +21,21 @@ function darkmodeUmschalten() {
     //Button auf aktiv/inaktiv setzen
     if (ist_gedrückt) {
         button_darkmode.setAttribute("aria-pressed", "false");
-        button_darkmode.classList.remove("active");
+        
     } else {
         button_darkmode.setAttribute("aria-pressed", "true");
-        button_darkmode.classList.add("active");
+        
     }
+    symbol.classList.toggle("bi-brightness-high")
+    symbol.classList.toggle("bi-moon")
 
-    //Es gibt nicht auf jeder Seite eine Ausgabe- und Hinweis-Div
+
+    //Prüfung für Elemente, die nicht auf jeder Seite existieren
     if (ausgabe_und_hinweis_container) {
         klassenUmschalten([ausgabe_und_hinweis_container],["bg-secondary","bg-white","text-light","text-dark"])
     }
     if (main_container_buttons) {
-        klassenUmschalten(main_container_buttons,["btn-dark","btn-light"])
+        klassenUmschalten(main_container_buttons,["btn-outline-dark","btn-outline-light"])
     }
 
     //Klassen einmaliger Elemente umschalten
