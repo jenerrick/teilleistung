@@ -35,7 +35,7 @@ function passwortGenerieren() {
     if (sonderzeichen_checkbox) passwort_zeichensatz += sonderzeichen
 
     if (passwort_zeichensatz.length === 0) {
-        alert("Bitte wähle mindestens eine Option für die Passwortgenerierung aus.")
+        zeigeHinweis("Es muss mindestens eine Checkbox angewählt werden!")
         return
     }
 
@@ -72,9 +72,10 @@ async function writeClipboardText() {
 }
 
 /**
- * Diese Funktion blendet einen Hinweis ein, der dem User signalisiert, dass der Text erfolgreich kopiert wurde.
+ * Diese Funktion blendet Hinweise über die Ausgabe-und-Hinweis-Div ein. 
+ * @param {*} hinweis Wird ein hinweis beim Aufruf der Funktion mitgegeben, wird dieser ausgegeben
  */
-function zeigeHinweis() {
+function zeigeHinweis(hinweis) {
     // Das Hinweis-Div sichtbar machen
     let hinweisDiv = document.getElementById("hinweis")
     hinweisDiv.innerHTML = ""
@@ -82,7 +83,13 @@ function zeigeHinweis() {
     let icon = document.createElement("i")
     let hinweisP = document.createElement("p")
 
-    if (document.getElementById("div_ausgabe").innerText == "") {
+    if (hinweis && document.getElementById("div_ausgabe").innerText == "") {
+        icon.classList.add("bi")
+        icon.classList.add("bi-exclamation-triangle")
+        hinweisP.appendChild(icon)
+        hinweisP.innerHTML += " " + hinweis
+
+    } else if (document.getElementById("div_ausgabe").innerText == "") {
         icon.classList.add("bi")
         icon.classList.add("bi-exclamation-triangle")
         hinweisP.appendChild(icon)
