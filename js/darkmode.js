@@ -7,14 +7,14 @@ function darkmodeUmschalten() {
     let navbar = document.querySelector("nav")
     let body = document.querySelector("body")
     let footer = document.querySelector("footer")
-    let main_container = document.querySelector("#main-container")
     let ausgabe_und_hinweis_container = document.querySelector("#div_ausgabe_und_hinweis")
 
-    //Mehrfach auftauchende Elemente
-    let navbar_links = document.getElementsByClassName("nav-link")
-    let footer_links = document.getElementsByClassName("footer-links")
+    //Potenziell Mehrfach auftauchende Elemente
+    let main_container = document.querySelectorAll("body>div")
     let main_container_links = document.querySelectorAll("#main-container a")
     let tabellen = document.querySelectorAll("table")
+    let navbar_links = document.getElementsByClassName("nav-link")
+    let footer_links = document.getElementsByClassName("footer-links")
 
     //Button auf aktiv/inaktiv setzen
     if (ist_gedrückt) {
@@ -34,9 +34,10 @@ function darkmodeUmschalten() {
     klassenUmschalten([navbar,footer],["bg-dark","bg-lime"])
     klassenUmschalten([navbar],["navbar-dark","navbar-light"])
     klassenUmschalten([body],["bg-secondary"])
-    klassenUmschalten([main_container],["bg-dark","bg-light","text-light","text-dark"])
+    
 
     //Klassen von Mengen von Elementen umschalten
+    klassenUmschalten(main_container,["bg-dark","bg-light","text-light","text-dark"])
     klassenUmschalten(footer_links,["text-light","text-dark"])
     klassenUmschalten(navbar_links,["text-light","text-dark"])
     klassenUmschalten(main_container_links,["a-dark"])
