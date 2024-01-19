@@ -12,6 +12,7 @@ function darkmodeUmschalten() {
     //Potenziell Mehrfach auftauchende Elemente
     let main_container = document.querySelectorAll("body>div")
     let main_container_links = document.querySelectorAll("body>div a")
+    let main_container_buttons = document.querySelectorAll("body>div button")
     let tabellen = document.querySelectorAll("table")
     let navbar_links = document.getElementsByClassName("nav-link")
     let footer_links = document.getElementsByClassName("footer-links")
@@ -27,7 +28,10 @@ function darkmodeUmschalten() {
 
     //Es gibt nicht auf jeder Seite eine Ausgabe- und Hinweis-Div
     if (ausgabe_und_hinweis_container) {
-        klassenUmschalten([ausgabe_und_hinweis_container],["bg-secondary","bg-white","text-white","text-dark"])
+        klassenUmschalten([ausgabe_und_hinweis_container],["bg-secondary","bg-white","text-light","text-dark"])
+    }
+    if (main_container_buttons) {
+        klassenUmschalten(main_container_buttons,["btn-dark","btn-light"])
     }
 
     //Klassen einmaliger Elemente umschalten
