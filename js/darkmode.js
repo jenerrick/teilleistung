@@ -11,7 +11,7 @@ function darkmodeUmschalten() {
 
     //Potenziell Mehrfach auftauchende Elemente
     let main_container = document.querySelectorAll("body>div")
-    let main_container_links = document.querySelectorAll("#main-container a")
+    let main_container_links = document.querySelectorAll("body>div a")
     let tabellen = document.querySelectorAll("table")
     let navbar_links = document.getElementsByClassName("nav-link")
     let footer_links = document.getElementsByClassName("footer-links")
