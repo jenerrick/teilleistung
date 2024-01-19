@@ -26,8 +26,7 @@ function darkmodeUmschalten() {
         button_darkmode.setAttribute("aria-pressed", "true");
         
     }
-    symbol.classList.toggle("bi-brightness-high")
-    symbol.classList.toggle("bi-moon")
+    
 
 
     //Prüfung für Elemente, die nicht auf jeder Seite existieren
@@ -39,6 +38,7 @@ function darkmodeUmschalten() {
     }
 
     //Klassen einmaliger Elemente umschalten
+    klassenUmschalten([symbol],["bi-brightness-high","bi-moon"])
     klassenUmschalten([navbar,footer],["bg-dark","bg-lime"])
     klassenUmschalten([navbar],["navbar-dark","navbar-light"])
     klassenUmschalten([body],["bg-secondary"])
