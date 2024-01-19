@@ -62,7 +62,6 @@ function passwortAusblenden() {
         hinweisDiv.innerHTML = ''
     }
 }
-
 async function writeClipboardText() {
     let text = document.getElementById("div_ausgabe").innerText
     try {
