@@ -26,8 +26,6 @@ function darkmodeUmschalten() {
         button_darkmode.setAttribute("aria-pressed", "true");
         
     }
-    
-
 
     //Prüfung für Elemente, die nicht auf jeder Seite existieren
     if (ausgabe_und_hinweis_container) {
@@ -51,6 +49,11 @@ function darkmodeUmschalten() {
     klassenUmschalten(main_container_links,["a-dark"])
     klassenUmschalten(tabellen,["table-dark"])
 }
+/**
+ * Diese Funktion iteriert über alle Elemente und Klassen und togglet für jedes Element aus der Menge an Elementen alle Klassen aus der Menge der Klassen.
+ * @param {*} elemente Die Elemente, über die iteriert werden soll
+ * @param {*} klassen Die Klassen, die getogglet werden sollen
+ */
 function klassenUmschalten(elemente, klassen) {
     for (const element of elemente) {
         for (const klasse of klassen) {
@@ -58,10 +61,15 @@ function klassenUmschalten(elemente, klassen) {
         }
     }
 }
-
+/**
+ * Die init-Funktion fügt dem Darkmode-Button einen EventListener hinzu.
+ */
 function init() {
     button_darkmode.addEventListener("click", darkmodeUmschalten)
 }
+/**
+ * Dieser EventListener sorgt dafür, dass init erst aufgerufen wird, wenn das DOM fertig geladen ist.
+ */
 window.addEventListener(
     "DOMContentLoaded",
     init

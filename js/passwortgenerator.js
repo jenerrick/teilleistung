@@ -47,7 +47,13 @@ function passwortGenerieren() {
     gib_aus(passwort)
 
 }
+
 let timerId
+/**
+ * Die Funktion gib_aus setzt das übergebene Passwort als Textinhalt der div_ausgabe. Zusätzlich wird geprüft, ob eine timerId exisitert. Tut sie es, wird der dazugehörige Timer gelöscht.
+ * Dann wird eine neue timerId gesetzt und die Funktion passwortAusblenden nach 10 Sekunden aufgerufen. 
+ * @param {} passwort Das Passwort, was ausgegeben werden soll.
+ */
 function gib_aus(passwort) {
     document.getElementById("div_ausgabe").innerText = passwort
     if (timerId)
@@ -56,12 +62,19 @@ function gib_aus(passwort) {
     timerId = setTimeout(passwortAusblenden, 10000)
 }
 
+/**
+ * Diese Funktion leert die div_ausgabe
+ */
 function passwortAusblenden() {
     let hinweisDiv = document.getElementById("div_ausgabe")
     if (hinweisDiv) {
         hinweisDiv.innerHTML = ''
     }
 }
+
+/**
+ * Diese Funktion kopiert den innerText der div_ausgabe in die Zwischenablage
+ */
 async function writeClipboardText() {
     let text = document.getElementById("div_ausgabe").innerText
     try {
@@ -114,6 +127,9 @@ function zeigeHinweis(hinweis) {
     }, 5000)
 }
 
+/**
+ * Diese Funktion leert den Inhalt der hinweis-Div und lässt den Hinweis ausblenden.
+ */
 function hinweisAusblenden() {
     let hinweisDiv = document.getElementById("hinweis")
     if (hinweisDiv) {
