@@ -71,6 +71,7 @@ async function writeClipboardText() {
     }
 }
 
+let hinweisTimerId
 /**
  * Diese Funktion blendet Hinweise über die Ausgabe-und-Hinweis-Div ein. 
  * @param {*} hinweis Wird ein hinweis beim Aufruf der Funktion mitgegeben, wird dieser ausgegeben
@@ -106,17 +107,24 @@ function zeigeHinweis(hinweis) {
     hinweisDiv.style.display = "block"
     hinweisDiv.style.opacity = "1"
 
+    clearTimeout(hinweisTimerId)
 
+    hinweisTimerId = setTimeout(function () {
+        hinweisAusblenden()
+    }, 5000)
+}
 
-    setTimeout(function () {
-        // Animation, indem die Opazität auf 0 gesetzt wird
+function hinweisAusblenden() {
+    let hinweisDiv = document.getElementById("hinweis")
+    if (hinweisDiv) {
         hinweisDiv.style.opacity = "0"
 
         // Nach der Animation das Div ausblenden
         setTimeout(function () {
             hinweisDiv.style.display = "none"
-        }, 2000) // Setze dies auf die gleiche Dauer wie die Transition-Dauer
-    }, 5000)
+            hinweisDiv.innerHTML = "" // InnerHTML löschen
+        }, 2000)
+    }
 }
 
 /**
