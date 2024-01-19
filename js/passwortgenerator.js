@@ -47,10 +47,20 @@ function passwortGenerieren() {
     gib_aus(passwort)
 
 }
-
+let timerId
 function gib_aus(passwort) {
     document.getElementById("div_ausgabe").innerText = passwort
-    passwortAusblenden()
+    if (timerId)
+        clearTimeout(timerId)
+
+    timerId = setTimeout(passwortAusblenden, 10000)
+}
+
+function passwortAusblenden() {
+    let hinweisDiv = document.getElementById("div_ausgabe")
+    if (hinweisDiv) {
+        hinweisDiv.innerHTML = ''
+    }
 }
 
 async function writeClipboardText() {
@@ -102,17 +112,7 @@ function zeigeHinweis() {
         }, 2000) // Setze dies auf die gleiche Dauer wie die Transition-Dauer
     }, 5000)
 }
-function passwortAusblenden() {
-    setTimeout(function () {
-        let hinweisDiv = document.getElementById("div_ausgabe")
 
-        // Überprüfen Sie, ob die <div> gefunden wurde
-        if (hinweisDiv) {
-            // Löschen Sie den Inhalt der <div>
-            hinweisDiv.innerHTML = ''
-        }
-    }, 10000)
-}
 /**
  * Die Funktion init fügt als erstes einen EventListener zum Button hinzu. Wird dieser gedrückt, wird die Funktion für die Passwortgenerierung aufgerufen.
  * Sie fügt außerdem einen EventListener zum Schieberegler hinzu. Wird dieser bewegt, soll der aktuelle Wert im span-Element mit der id länge_anzeigen angezeigt werden.
