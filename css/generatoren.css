@@ -1,9 +1,7 @@
 #div_ausgabe_und_hinweis {
     display: block;
     margin-top: 20px;
-    padding: 10px;
-    
-    
+    padding: 10px; 
 }
 #hinweis {
     display: none;
