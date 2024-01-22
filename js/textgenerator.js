@@ -140,23 +140,6 @@ function checkMin1(feld) {
     }
 
 }
-/**
- * Diese Funktion markiert den Text inneralb des div_ausgabe-Containers. Dazu wird auf das window-Objekt zugegriffen und alle markierten Inhalte werden durch
- * den Bereich ersetzt, der durch selectNodeContens(container) festgelegt wurde.
- */
-function markiereText() {
-    
-    let container = document.getElementById("div_ausgabe");
-
-    
-    let textAuswahl = window.getSelection();
-    let bereich = document.createRange();
-    bereich.selectNodeContents(container);
-
-    // Entfernen Sie vorhandene Auswahl und fügen Sie den neuen Bereich ein
-    textAuswahl.removeAllRanges();
-    textAuswahl.addRange(bereich);
-}
 
 /**
  * Diese Funktion kopiert den Inhalt des Ausgabecontainers in die Zwischenablage. https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
