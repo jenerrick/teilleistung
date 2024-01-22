@@ -73,7 +73,7 @@ function passwortAusblenden() {
 }
 
 /**
- * Diese Funktion kopiert den innerText der div_ausgabe in die Zwischenablage
+ * Diese Funktion kopiert den innerText der div_ausgabe in die Zwischenablage Mehr Erläuterung: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
  */
 async function writeClipboardText() {
     let text = document.getElementById("div_ausgabe").innerText

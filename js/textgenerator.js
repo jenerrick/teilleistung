@@ -142,7 +142,7 @@ function checkMin1(feld) {
 }
 
 /**
- * Diese Funktion kopiert den Inhalt des Ausgabecontainers in die Zwischenablage. https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
+ * Diese Funktion kopiert den Inhalt des Ausgabecontainers in die Zwischenablage. Mehr Erläuterung: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
  */
 async function writeClipboardText() {
     let text = document.getElementById("div_ausgabe").innerText
