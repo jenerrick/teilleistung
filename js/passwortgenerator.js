@@ -86,14 +86,15 @@ async function writeClipboardText() {
 
 let hinweisTimerId
 /**
- * Diese Funktion blendet Hinweise über die Ausgabe-und-Hinweis-Div ein. 
+ * Diese Funktion blendet Hinweise über die Ausgabe-und-Hinweis-Div ein. Der Hinweis wird aus einem Symbol und einem p-Element zusammengebaut.
+ * Das p-Element wird zunächst mit dem Icon gefüllt und dann um den entsprecheden Hinweis ergänzt, der entweder mitgegeben wurde oder hartcodiert ist.
+ * Zum Schluss wird die hinweisDiv um das p-Element erweitert und sichtbar gemacht. Zeitgesteuert wird dann die Funktion hinweisAusblenden aufgerufen. 
  * @param {*} hinweis Wird ein hinweis beim Aufruf der Funktion mitgegeben, wird dieser ausgegeben
  */
 function zeigeHinweis(hinweis) {
-    // Das Hinweis-Div sichtbar machen
     let hinweisDiv = document.getElementById("hinweis")
     hinweisDiv.innerHTML = ""
-
+    
     let icon = document.createElement("i")
     let hinweisP = document.createElement("p")
 
