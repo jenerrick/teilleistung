@@ -51,7 +51,7 @@ function passwortGenerieren() {
 let timerId
 /**
  * Die Funktion gib_aus setzt das übergebene Passwort als Textinhalt der div_ausgabe. Zusätzlich wird geprüft, ob eine timerId exisitert. Tut sie es, wird der dazugehörige Timer gelöscht.
- * Dann wird eine neue timerId gesetzt und die Funktion passwortAusblenden nach 10 Sekunden aufgerufen. 
+ * Dann wird eine neue timerId gesetzt und die Funktion passwortAusblenden nach 10 Sekunden aufgerufen. Die timerId steht als globale Variable zur Verfügung.
  * @param {} passwort Das Passwort, was ausgegeben werden soll.
  */
 function gib_aus(passwort) {
@@ -66,9 +66,9 @@ function gib_aus(passwort) {
  * Diese Funktion leert die div_ausgabe
  */
 function passwortAusblenden() {
-    let hinweisDiv = document.getElementById("div_ausgabe")
-    if (hinweisDiv) {
-        hinweisDiv.innerHTML = ''
+    let passwortDiv = document.getElementById("div_ausgabe")
+    if (passwortDiv) {
+        passwortDiv.innerHTML = ''
     }
 }
 
