@@ -1,10 +1,21 @@
+/**
+ * Diese Funktion schaltet den Dark Mode um, indem sie das "aria-pressed"-Attribut des Dark Mode-Buttons
+ * aktualisiert und die entsprechenden CSS-Klassen für verschiedene Elemente umschaltet. Der aktualisierte Wert des "aria-pressed"-Attributs wird in der Variable darkmodeEingeschaltet gespeichert.
+ * Nachdem alle Klassen aktualisiert worden sind, wird der aktualisierte Wert von darkmodeEingeschaltet im sessionStorage gespeichert.
+ */
 function darkmodeUmschalten() {
     //Button
     let button_darkmode = document.getElementById("button_darkmode")
-    let ist_gedrückt = button_darkmode.getAttribute("aria-pressed") == "true"
-    let symbol = document.querySelector("#button_darkmode i")
+    let darkmodeEingeschaltet = button_darkmode.getAttribute("aria-pressed") == "true"
+    if (darkmodeEingeschaltet) {
+        button_darkmode.setAttribute("aria-pressed", false)
+    } else {
+        button_darkmode.setAttribute("aria-pressed", true)
+    }
+    darkmodeEingeschaltet = !darkmodeEingeschaltet
 
     //Einmalige Elemente mit querySelector
+    let symbol = document.querySelector("#button_darkmode i")
     let navbar = document.querySelector("nav")
     let body = document.querySelector("body")
     let footer = document.querySelector("footer")
@@ -18,21 +29,12 @@ function darkmodeUmschalten() {
     let navbar_links = document.getElementsByClassName("nav-link")
     let footer_links = document.getElementsByClassName("footer-links")
 
-    //Button auf aktiv/inaktiv setzen
-    if (ist_gedrückt) {
-        button_darkmode.setAttribute("aria-pressed", "false");
-        
-    } else {
-        button_darkmode.setAttribute("aria-pressed", "true");
-        
-    }
-
     //Prüfung für Elemente, die nicht auf jeder Seite existieren
     if (ausgabe_und_hinweis_container) {
         klassenUmschalten([ausgabe_und_hinweis_container],["bg-secondary","bg-white","text-light","text-dark"])
     }
     if (main_container_buttons) {
-        klassenUmschalten(main_container_buttons,["btn-outline-dark","btn-outline-light"])
+        klassenUmschalten(main_container_buttons,["btn-dark","btn-light"])
     }
 
     //Klassen einmaliger Elemente umschalten
@@ -48,6 +50,8 @@ function darkmodeUmschalten() {
     klassenUmschalten(navbar_links,["text-light","text-dark"])
     klassenUmschalten(main_container_links,["a-dark"])
     klassenUmschalten(tabellen,["table-dark"])
+
+    window.sessionStorage.setItem("darkmodeEingeschaltet", darkmodeEingeschaltet);
 }
 /**
  * Diese Funktion iteriert über alle Elemente und Klassen und togglet für jedes Element aus der Menge an Elementen alle Klassen aus der Menge der Klassen.
@@ -62,9 +66,21 @@ function klassenUmschalten(elemente, klassen) {
     }
 }
 /**
+ * Diese Funktion sorgt dafür, dass die Einstellung für dem Darkmode auf jeder Seite so ist, wie der User es möchte. 
+ * Wenn darkmodeEingeschaltet den Wert false hat, wird die Funktion darkmodeUmschalten aufgerufen.
+ */
+function darkmodeInitialisieren() {
+    let darkmodeEingeschaltet = window.sessionStorage.getItem("darkmodeEingeschaltet")
+    if (darkmodeEingeschaltet == "false") {
+        darkmodeUmschalten()
+    }
+}
+
+/**
  * Die init-Funktion fügt dem Darkmode-Button einen EventListener hinzu.
  */
 function init() {
+    darkmodeInitialisieren()
     button_darkmode.addEventListener("click", darkmodeUmschalten)
 }
 /**
