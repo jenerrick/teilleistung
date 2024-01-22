@@ -88,7 +88,9 @@ let hinweisTimerId
 /**
  * Diese Funktion blendet Hinweise über die Ausgabe-und-Hinweis-Div ein. Der Hinweis wird aus einem Symbol und einem p-Element zusammengebaut.
  * Das p-Element wird zunächst mit dem Icon gefüllt und dann um den entsprecheden Hinweis ergänzt, der entweder mitgegeben wurde oder hartcodiert ist.
- * Zum Schluss wird die hinweisDiv um das p-Element erweitert und sichtbar gemacht. Zeitgesteuert wird dann die Funktion hinweisAusblenden aufgerufen. 
+ * Dann wird die hinweisDiv um das p-Element erweitert und sichtbar gemacht. Ein bestehender und hinweisTimerId zugehöriger Timer wird gelöscht, bevor
+ * ein zeitgesteuert die Funktion hinweisAusblenden aufgerufen wird und der hinweisTimerId zugewiesen wird. Die Variable hinweisTimerId steht wegen der Prüfung 
+ * als globale Variable zur Verfügung
  * @param {*} hinweis Wird ein hinweis beim Aufruf der Funktion mitgegeben, wird dieser ausgegeben
  */
 function zeigeHinweis(hinweis) {
